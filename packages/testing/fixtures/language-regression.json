@@ -1,0 +1,283 @@
+{
+  "version": "synthetic-language-v1",
+  "origin": "synthetic",
+  "cases": [
+    {
+      "id": "de-facts",
+      "language": "de",
+      "input": "Ich werde am 12. März genau 3 Pakete an Mia liefern.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [
+        "12",
+        "3"
+      ],
+      "protectedTerms": [
+        "Mia"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "de-negation",
+      "language": "de",
+      "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "ABC-123"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "de-style",
+      "language": "de",
+      "input": "Kannst du mir die Datei senden? Ich bin mir nicht sicher.",
+      "style": "formal",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "Datei"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "en-facts",
+      "language": "en",
+      "input": "I will deliver exactly 3 packages to Mia on March 12.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [
+        "3",
+        "12"
+      ],
+      "protectedTerms": [
+        "Mia"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "en-negation",
+      "language": "en",
+      "input": "I do not promise to sign contract ABC-123.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "ABC-123"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "en-style",
+      "language": "en",
+      "input": "Could you send me the file? I am not sure.",
+      "style": "formal",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "file"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "uk-facts",
+      "language": "uk",
+      "input": "Я доставлю Мії рівно 3 пакунки 12 березня.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [
+        "3",
+        "12"
+      ],
+      "protectedTerms": [
+        "Мії"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "uk-negation",
+      "language": "uk",
+      "input": "Я не обіцяю підписати договір ABC-123.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "ABC-123"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "uk-style",
+      "language": "uk",
+      "input": "Чи можете надіслати файл? Я не впевнений.",
+      "style": "formal",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "файл"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "vi-facts",
+      "language": "vi",
+      "input": "Tôi sẽ giao đúng 3 gói hàng cho Mia vào ngày 12 tháng 3.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [
+        "3",
+        "12",
+        "3"
+      ],
+      "protectedTerms": [
+        "Mia"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "vi-negation",
+      "language": "vi",
+      "input": "Tôi không hứa ký hợp đồng ABC-123.",
+      "style": "neutral",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "ABC-123"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "vi-style",
+      "language": "vi",
+      "input": "Bạn có thể gửi tệp cho tôi không? Tôi chưa chắc chắn.",
+      "style": "formal",
+      "proficiency": "B2",
+      "numbers": [],
+      "protectedTerms": [
+        "tệp"
+      ],
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    }
+  ]
+}

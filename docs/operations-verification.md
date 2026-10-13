@@ -1,0 +1,23 @@
+# Перевірки протоколу операцій
+
+Локальні перевірки використовують PostgreSQL 17, Redis 7.4 без AOF/RDB та synthetic provider double. Цей double повертає вхідний текст як результат і не засвідчує мовну якість.
+
+- `npm run test:operations`: REST / Socket.IO parity, strict validation, CSRF, bearer panel scope, два акаунти, IDOR для snapshot / cancel, приватні події, конкурентна дедуплікація, HMAC conflict, expired payload та reconnect без додаткових provider attempts.
+- `node --experimental-strip-types tests/operation-stream.test.mjs`: незалежні операції, дублікати, пропуски sequence, відновлення snapshot, stale revision та очищення.
+- `npm run test:payloads`: user-scoped Redis keys, абсолютний TTL, коротший TTL завершених результатів, неможливість продовження TTL / відновлення простроченого payload, явне видалення, вимкнений persistence та canary checks metadata / logs.
+
+REST: `POST /v1/operations` повертає `202` accepted; `GET /v1/operations/:id` повертає snapshot; `POST /v1/operations/:id/cancel` запитує скасування. Socket.IO namespace `/v1/operations`: команди `operation.accept`, `operation.snapshot`, `operation.cancel`, приватні повідомлення `operation.event`. У команд немає довіреного клієнтського user ID; користувач походить із сесії. Socket acknowledgements помилок мають `{ error: StructuredError }`.
+
+У development потрібно явно задати `AI_PROVIDER=double` і стабільний `OPERATION_HMAC_KEY` (32 випадкові байти у hex). Без них прийняття нової операції недоступне. Production забороняє double.
+
+`npm run test:budgets` перевіряє резерв усіх етапів, user/global token race, concurrency, rate limit, actual / estimated ledger, duplicate settlement, missing usage, timeout hold, зміну policy між етапами й rollback. У development ліміти: 20 запитів/хв, 2 одночасні операції користувача, 20 глобально, 5 млн токенів/день користувача та 50 млн глобально. Cost budget за замовчуванням нульовий. Резерв використовує консервативну model input/output межу на кожен етап; це навмисно суворіше за приблизний підрахунок токенів тексту. Невідомий usage утримується до reconciliation, після 30 хв розраховується за верхньою межею як estimated. PostgreSQL global counters зберігають витрачені токени після видалення synthetic test users.
+
+`npm run test:recovery` перевіряє справжній SIGKILL після dispatch, persisted стан до dispatch, partial failure, cancellation для adapter, який ігнорує abort, та invalid/refusal/incomplete/provider-error без hidden retries. Startup recovery не відновлює provider calls. Застосунок розрахований на один API instance для execution ownership.
+
+`GET /v1/me/usage` повертає user-scoped денний UTC підсумок operations, dispatched provider attempts, actual / estimated input/output tokens, cost та нерозраховані резерви. Профіль показує ці лічильники. Browser fixture перевіряє 5 operations / 8 calls; screenshot — `/tmp/klaro-usage.png`.
+
+Model/prompt policies у `AI_POLICY_FILE` містять `active` та `policies`. Registry відхиляє несумісні capabilities, duplicate version і unknown prompt version. Активна операція зберігає immutable policy; зміна active pointer застосовується до нових операцій. OpenAI policy додатково вимагає nonzero price policy та evaluation record з matching model/prompt versions, чотирма мовами, contract/human review sign-off і report ID. Це адміністративне посилання на review evidence, а не автоматичне засвідчення мовної якості. У цьому workspace такого sign-off не створено.
+
+OpenAI Responses adapter тестується через injected fetch із synthetic credentials. Реальних provider calls не було. Він надсилає selected text / bounded context, server-owned instructions, `store: false`, strict JSON schema, output cap та timeout, без tools, background чи conversation IDs. Automatic retry count — нуль; явний retry користувача є новою операцією. Формат звірено 2026-10-09 з [OpenAI Docs: Responses migration](https://developers.openai.com/api/docs/guides/migrate-to-responses) та [Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs). `store: false` стосується application response storage; provider retention disclosure потребує окремої перевірки в 10.1.
+
+Result validation перевіряє заявлену output language, revision/recommendation/source IDs, UTF-16 boundaries, exact original substrings, reconstruction, duplicate / overlapping edits та дослівне збереження protected terms. Перекривні зміни провайдер має подавати одним canonical compound replacement у групі. Заявлена language metadata та структурні перевірки не засвідчують мовну правильність або істинність; для цього потрібен evaluation/human review.

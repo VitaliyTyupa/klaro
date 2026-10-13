@@ -1,0 +1,3123 @@
+{
+  "status": "planned-not-executed",
+  "realModelEvaluation": false,
+  "paidCalls": 0,
+  "policy": {
+    "version": "openai-gpt41mini-policy-v1",
+    "model": {
+      "version": "openai-gpt41mini-model-v1",
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "inputTokenLimit": 16384,
+      "outputTokenLimit": 4096,
+      "timeoutMs": 90000,
+      "structuredOutputs": true
+    },
+    "price": {
+      "version": "openai-gpt41mini-price-2026-10-09",
+      "inputMicrousdPerMillion": 400000,
+      "outputMicrousdPerMillion": 1600000
+    },
+    "workflowVersion": "language-workflows-v1",
+    "promptVersion": "language-v5"
+  },
+  "plan": {
+    "fixtureVersion": "synthetic-full-language-v1",
+    "fixtureDigest": "f46b45a78f392f86f07a350ed49a3cb5bb68602364783ad229e6cd8f2cec0b1b",
+    "policyDigest": "38dd3efb136b79a231676c895b9850cf17614aa60059db0412e7389f78ebd63d",
+    "commands": 72,
+    "plannedCalls": 96,
+    "callBoundMicrousd": 13108,
+    "maxCostMicrousd": 1258368
+  },
+  "cases": [
+    {
+      "id": "de-facts",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "de-facts",
+        "revisionId": "de-facts",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Ich werde am 12. März genau 3 Pakete an Mia liefern.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 40,
+            "end": 43
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "de-negation",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "de-negation",
+        "revisionId": "de-negation",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "de-style",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "de-style",
+        "revisionId": "de-style",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Kannst du mir die Datei senden? Ich bin mir nicht sicher.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 18,
+            "end": 23
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "en-facts",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "en-facts",
+        "revisionId": "en-facts",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "I will deliver exactly 3 packages to Mia on March 12.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 37,
+            "end": 40
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "en-negation",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "en-negation",
+        "revisionId": "en-negation",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "I do not promise to sign contract ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "en-style",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "en-style",
+        "revisionId": "en-style",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Could you send me the file? I am not sure.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 22,
+            "end": 26
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "uk-facts",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "uk-facts",
+        "revisionId": "uk-facts",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Я доставлю Мії рівно 3 пакунки 12 березня.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 11,
+            "end": 14
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "uk-negation",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "uk-negation",
+        "revisionId": "uk-negation",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Я не обіцяю підписати договір ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 30,
+            "end": 37
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "uk-style",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "uk-style",
+        "revisionId": "uk-style",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Чи можете надіслати файл? Я не впевнений.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 20,
+            "end": 24
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "vi-facts",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "vi-facts",
+        "revisionId": "vi-facts",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Tôi sẽ giao đúng 3 gói hàng cho Mia vào ngày 12 tháng 3.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 32,
+            "end": 35
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "vi-negation",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "vi-negation",
+        "revisionId": "vi-negation",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Tôi không hứa ký hợp đồng ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 26,
+            "end": 33
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "vi-style",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "vi-style",
+        "revisionId": "vi-style",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Bạn có thể gửi tệp cho tôi không? Tôi chưa chắc chắn.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 15,
+            "end": 18
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "uk-grammar",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "uk-grammar",
+        "revisionId": "uk-grammar",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Вона надіслав лист учора.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "context": "Ідеться про одну жінку.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-uk-de-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-uk-de-neutral",
+        "revisionId": "translate-uk-de-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Я не обіцяю підписати договір ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 30,
+            "end": 37
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-uk-de-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-uk-de-formal",
+        "revisionId": "translate-uk-de-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Я не обіцяю підписати договір ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 30,
+            "end": 37
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-uk-en-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-uk-en-neutral",
+        "revisionId": "translate-uk-en-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Я не обіцяю підписати договір ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "en",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 30,
+            "end": 37
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-uk-en-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-uk-en-formal",
+        "revisionId": "translate-uk-en-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Я не обіцяю підписати договір ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "en",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 30,
+            "end": 37
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-uk-vi-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-uk-vi-neutral",
+        "revisionId": "translate-uk-vi-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Я не обіцяю підписати договір ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "vi",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 30,
+            "end": 37
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-uk-vi-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-uk-vi-formal",
+        "revisionId": "translate-uk-vi-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Я не обіцяю підписати договір ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "vi",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 30,
+            "end": 37
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-uk-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-uk-neutral",
+        "revisionId": "paraphrase-uk-neutral",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "Ідеться про одну жінку.\nВін сказав, що вона готова.",
+        "selection": {
+          "scope": "selection",
+          "start": 24,
+          "end": 51
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "context": "Ідеться про одну жінку.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-uk-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-uk-neutral",
+        "revisionId": "alternatives-uk-neutral",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "Я доставлю Мії рівно 3 пакунки 12 березня.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 11,
+            "end": 14
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-uk-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-uk-neutral",
+        "revisionId": "explain-uk-neutral",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "Вона надіслав лист учора.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "de",
+        "context": "Ідеться про одну жінку.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-uk",
+          "recommendationId": "rec-uk"
+        },
+        "recommendation": {
+          "recommendationId": "rec-uk",
+          "text": "Вона надіслала лист учора."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-uk-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-uk-formal",
+        "revisionId": "paraphrase-uk-formal",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "Ідеться про одну жінку.\nВін сказав, що вона готова.",
+        "selection": {
+          "scope": "selection",
+          "start": 24,
+          "end": 51
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "context": "Ідеться про одну жінку.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-uk-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-uk-formal",
+        "revisionId": "alternatives-uk-formal",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "Я доставлю Мії рівно 3 пакунки 12 березня.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 11,
+            "end": 14
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-uk-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-uk-formal",
+        "revisionId": "explain-uk-formal",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "Вона надіслав лист учора.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "de",
+        "context": "Ідеться про одну жінку.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-uk",
+          "recommendationId": "rec-uk"
+        },
+        "recommendation": {
+          "recommendationId": "rec-uk",
+          "text": "Вона надіслала лист учора."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "lexical-uk",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "lexical-uk",
+        "revisionId": "lexical-uk",
+        "operationType": "lexical-supplement",
+        "surface": "web",
+        "input": "лист",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "uk"
+          ],
+          "activeWritingLanguage": "uk",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "uk",
+        "targetLanguage": "uk",
+        "protectedSpans": [],
+        "lexical": {
+          "section": "overview"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "source-uk",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "source-uk",
+        "revisionId": "source-uk",
+        "operationType": "source-translation",
+        "surface": "web",
+        "input": "A written message sent to a recipient.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "uk",
+        "protectedSpans": [],
+        "lexical": {
+          "entryId": "synthetic-en",
+          "section": "overview",
+          "sourceVersion": "synthetic-source-v1"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "de-grammar",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "de-grammar",
+        "revisionId": "de-grammar",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Sie haben gestern den Brief geschickt.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "context": "Mit Sie ist eine einzelne Frau gemeint, keine höfliche Anrede.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-de-uk-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-de-uk-neutral",
+        "revisionId": "translate-de-uk-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-de-uk-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-de-uk-formal",
+        "revisionId": "translate-de-uk-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-de-en-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-de-en-neutral",
+        "revisionId": "translate-de-en-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "en",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-de-en-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-de-en-formal",
+        "revisionId": "translate-de-en-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "en",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-de-vi-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-de-vi-neutral",
+        "revisionId": "translate-de-vi-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "vi",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-de-vi-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-de-vi-formal",
+        "revisionId": "translate-de-vi-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "vi",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-de-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-de-neutral",
+        "revisionId": "paraphrase-de-neutral",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "Mit Sie ist eine einzelne Frau gemeint, keine höfliche Anrede.\nEr sagte, dass sie bereit sei.",
+        "selection": {
+          "scope": "selection",
+          "start": 63,
+          "end": 93
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "context": "Mit Sie ist eine einzelne Frau gemeint, keine höfliche Anrede.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-de-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-de-neutral",
+        "revisionId": "alternatives-de-neutral",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "Ich werde am 12. März genau 3 Pakete an Mia liefern.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 40,
+            "end": 43
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-de-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-de-neutral",
+        "revisionId": "explain-de-neutral",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "Sie haben gestern den Brief geschickt.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "uk",
+        "context": "Mit Sie ist eine einzelne Frau gemeint, keine höfliche Anrede.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-de",
+          "recommendationId": "rec-de"
+        },
+        "recommendation": {
+          "recommendationId": "rec-de",
+          "text": "Sie hat gestern den Brief geschickt."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-de-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-de-formal",
+        "revisionId": "paraphrase-de-formal",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "Mit Sie ist eine einzelne Frau gemeint, keine höfliche Anrede.\nEr sagte, dass sie bereit sei.",
+        "selection": {
+          "scope": "selection",
+          "start": 63,
+          "end": 93
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "context": "Mit Sie ist eine einzelne Frau gemeint, keine höfliche Anrede.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-de-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-de-formal",
+        "revisionId": "alternatives-de-formal",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "Ich werde am 12. März genau 3 Pakete an Mia liefern.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 40,
+            "end": 43
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-de-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-de-formal",
+        "revisionId": "explain-de-formal",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "Sie haben gestern den Brief geschickt.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "uk",
+        "context": "Mit Sie ist eine einzelne Frau gemeint, keine höfliche Anrede.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-de",
+          "recommendationId": "rec-de"
+        },
+        "recommendation": {
+          "recommendationId": "rec-de",
+          "text": "Sie hat gestern den Brief geschickt."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "lexical-de",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "lexical-de",
+        "revisionId": "lexical-de",
+        "operationType": "lexical-supplement",
+        "surface": "web",
+        "input": "Brief",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "de",
+        "protectedSpans": [],
+        "lexical": {
+          "section": "overview"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "source-de",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "source-de",
+        "revisionId": "source-de",
+        "operationType": "source-translation",
+        "surface": "web",
+        "input": "A written message sent to a recipient.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "de",
+        "protectedSpans": [],
+        "lexical": {
+          "entryId": "synthetic-en",
+          "section": "overview",
+          "sourceVersion": "synthetic-source-v1"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "en-grammar",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "en-grammar",
+        "revisionId": "en-grammar",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "She have sent the letter yesterday.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "context": "The subject is one woman.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-en-uk-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-en-uk-neutral",
+        "revisionId": "translate-en-uk-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "I do not promise to sign contract ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-en-uk-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-en-uk-formal",
+        "revisionId": "translate-en-uk-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "I do not promise to sign contract ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-en-de-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-en-de-neutral",
+        "revisionId": "translate-en-de-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "I do not promise to sign contract ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-en-de-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-en-de-formal",
+        "revisionId": "translate-en-de-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "I do not promise to sign contract ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-en-vi-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-en-vi-neutral",
+        "revisionId": "translate-en-vi-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "I do not promise to sign contract ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "vi",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-en-vi-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-en-vi-formal",
+        "revisionId": "translate-en-vi-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "I do not promise to sign contract ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "vi",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 34,
+            "end": 41
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-en-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-en-neutral",
+        "revisionId": "paraphrase-en-neutral",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "The subject is one woman.\nHe said she was ready.",
+        "selection": {
+          "scope": "selection",
+          "start": 26,
+          "end": 48
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "context": "The subject is one woman.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-en-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-en-neutral",
+        "revisionId": "alternatives-en-neutral",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "I will deliver exactly 3 packages to Mia on March 12.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 37,
+            "end": 40
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-en-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-en-neutral",
+        "revisionId": "explain-en-neutral",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "She have sent the letter yesterday.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "uk",
+        "context": "The subject is one woman.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-en",
+          "recommendationId": "rec-en"
+        },
+        "recommendation": {
+          "recommendationId": "rec-en",
+          "text": "She sent the letter yesterday."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-en-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-en-formal",
+        "revisionId": "paraphrase-en-formal",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "The subject is one woman.\nHe said she was ready.",
+        "selection": {
+          "scope": "selection",
+          "start": 26,
+          "end": 48
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "context": "The subject is one woman.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-en-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-en-formal",
+        "revisionId": "alternatives-en-formal",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "I will deliver exactly 3 packages to Mia on March 12.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 37,
+            "end": 40
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-en-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-en-formal",
+        "revisionId": "explain-en-formal",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "She have sent the letter yesterday.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "uk",
+        "context": "The subject is one woman.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-en",
+          "recommendationId": "rec-en"
+        },
+        "recommendation": {
+          "recommendationId": "rec-en",
+          "text": "She sent the letter yesterday."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "lexical-en",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "lexical-en",
+        "revisionId": "lexical-en",
+        "operationType": "lexical-supplement",
+        "surface": "web",
+        "input": "letter",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "en",
+        "protectedSpans": [],
+        "lexical": {
+          "section": "overview"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "source-en",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "source-en",
+        "revisionId": "source-en",
+        "operationType": "source-translation",
+        "surface": "web",
+        "input": "Eine schriftliche Nachricht an einen Empfänger.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "en",
+          "writingLanguages": [
+            "de"
+          ],
+          "activeWritingLanguage": "de",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "de",
+        "targetLanguage": "en",
+        "protectedSpans": [],
+        "lexical": {
+          "entryId": "synthetic-de",
+          "section": "overview",
+          "sourceVersion": "synthetic-source-v1"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "vi-grammar",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "vi-grammar",
+        "revisionId": "vi-grammar",
+        "operationType": "correction",
+        "surface": "web",
+        "input": "Cô ấy gửi đã bức thư hôm qua.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "context": "Chủ ngữ là một người phụ nữ.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-vi-uk-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-vi-uk-neutral",
+        "revisionId": "translate-vi-uk-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Tôi không hứa ký hợp đồng ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 26,
+            "end": 33
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-vi-uk-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-vi-uk-formal",
+        "revisionId": "translate-vi-uk-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Tôi không hứa ký hợp đồng ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "uk",
+        "protectedSpans": [
+          {
+            "start": 26,
+            "end": 33
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-vi-de-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-vi-de-neutral",
+        "revisionId": "translate-vi-de-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Tôi không hứa ký hợp đồng ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 26,
+            "end": 33
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-vi-de-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-vi-de-formal",
+        "revisionId": "translate-vi-de-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Tôi không hứa ký hợp đồng ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "de",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "de",
+        "protectedSpans": [
+          {
+            "start": 26,
+            "end": 33
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-vi-en-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-vi-en-neutral",
+        "revisionId": "translate-vi-en-neutral",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Tôi không hứa ký hợp đồng ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "en",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 26,
+            "end": 33
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "translate-vi-en-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "translate-vi-en-formal",
+        "revisionId": "translate-vi-en-formal",
+        "operationType": "translation",
+        "surface": "web",
+        "input": "Tôi không hứa ký hợp đồng ABC-123.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "en",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "en",
+        "protectedSpans": [
+          {
+            "start": 26,
+            "end": 33
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-vi-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-vi-neutral",
+        "revisionId": "paraphrase-vi-neutral",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "Chủ ngữ là một người phụ nữ.\nAnh ấy nói cô ấy đã sẵn sàng.",
+        "selection": {
+          "scope": "selection",
+          "start": 29,
+          "end": 58
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "context": "Chủ ngữ là một người phụ nữ.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-vi-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-vi-neutral",
+        "revisionId": "alternatives-vi-neutral",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "Tôi sẽ giao đúng 3 gói hàng cho Mia vào ngày 12 tháng 3.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 32,
+            "end": 35
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-vi-neutral",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-vi-neutral",
+        "revisionId": "explain-vi-neutral",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "Cô ấy gửi đã bức thư hôm qua.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "uk",
+        "context": "Chủ ngữ là một người phụ nữ.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-vi",
+          "recommendationId": "rec-vi"
+        },
+        "recommendation": {
+          "recommendationId": "rec-vi",
+          "text": "Cô ấy đã gửi bức thư hôm qua."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "paraphrase-vi-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "paraphrase-vi-formal",
+        "revisionId": "paraphrase-vi-formal",
+        "operationType": "paraphrase",
+        "surface": "web",
+        "input": "Chủ ngữ là một người phụ nữ.\nAnh ấy nói cô ấy đã sẵn sàng.",
+        "selection": {
+          "scope": "selection",
+          "start": 29,
+          "end": 58
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "context": "Chủ ngữ là một người phụ nữ.",
+        "protectedSpans": []
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "alternatives-vi-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "alternatives-vi-formal",
+        "revisionId": "alternatives-vi-formal",
+        "operationType": "alternatives",
+        "surface": "web",
+        "input": "Tôi sẽ giao đúng 3 gói hàng cho Mia vào ngày 12 tháng 3.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "protectedSpans": [
+          {
+            "start": 32,
+            "end": 35
+          }
+        ]
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "explain-vi-formal",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "explain-vi-formal",
+        "revisionId": "explain-vi-formal",
+        "operationType": "explanation",
+        "surface": "web",
+        "input": "Cô ấy gửi đã bức thư hôm qua.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "formal",
+          "proficiency": "B2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "uk",
+        "context": "Chủ ngữ là một người phụ nữ.",
+        "protectedSpans": [],
+        "parent": {
+          "operationId": "parent-vi",
+          "recommendationId": "rec-vi"
+        },
+        "recommendation": {
+          "recommendationId": "rec-vi",
+          "text": "Cô ấy đã gửi bức thư hôm qua."
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "lexical-vi",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "lexical-vi",
+        "revisionId": "lexical-vi",
+        "operationType": "lexical-supplement",
+        "surface": "web",
+        "input": "thư",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "uk",
+          "writingLanguages": [
+            "vi"
+          ],
+          "activeWritingLanguage": "vi",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "vi",
+        "targetLanguage": "vi",
+        "protectedSpans": [],
+        "lexical": {
+          "section": "overview"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    },
+    {
+      "id": "source-vi",
+      "command": {
+        "version": "v1",
+        "clientRequestId": "source-vi",
+        "revisionId": "source-vi",
+        "operationType": "source-translation",
+        "surface": "web",
+        "input": "A written message sent to a recipient.",
+        "selection": {
+          "scope": "document"
+        },
+        "preferences": {
+          "version": "v1",
+          "nativeLanguage": "vi",
+          "writingLanguages": [
+            "en"
+          ],
+          "activeWritingLanguage": "en",
+          "style": "neutral",
+          "proficiency": "A2"
+        },
+        "sourceLanguage": "en",
+        "targetLanguage": "vi",
+        "protectedSpans": [],
+        "lexical": {
+          "entryId": "synthetic-en",
+          "section": "overview",
+          "sourceVersion": "synthetic-source-v1"
+        }
+      },
+      "reviewCriteria": [
+        "grammar",
+        "meaning",
+        "facts",
+        "numbers",
+        "negation",
+        "commitment",
+        "style",
+        "protected-terms",
+        "ambiguity"
+      ]
+    }
+  ]
+}

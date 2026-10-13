@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@klaro/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@klaro/editor": [
+        "packages/editor/src/index.ts"
+      ],
+      "@klaro/language-profiles": [
+        "packages/language-profiles/src/index.ts"
+      ],
+      "@klaro/testing": [
+        "packages/testing/src/index.ts"
+      ],
+      "@klaro/editor/session": [
+        "packages/editor/src/session.ts"
+      ],
+      "@klaro/editor/api-client": [
+        "packages/editor/src/api-client.ts"
+      ],
+      "@klaro/editor/privacy": [
+        "packages/editor/src/privacy.ts"
+      ],
+      "@klaro/editor/processing-consent": [
+        "packages/editor/src/processing-consent.ts"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true
+  }
+}

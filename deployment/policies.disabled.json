@@ -1,0 +1,24 @@
+{
+  "active": "double-policy-v5",
+  "policies": [
+    {
+      "version": "double-policy-v5",
+      "model": {
+        "version": "double-v1",
+        "provider": "double",
+        "model": "deterministic",
+        "inputTokenLimit": 128000,
+        "outputTokenLimit": 16384,
+        "timeoutMs": 90000,
+        "structuredOutputs": true
+      },
+      "price": {
+        "version": "double-free-v1",
+        "inputMicrousdPerMillion": 0,
+        "outputMicrousdPerMillion": 0
+      },
+      "workflowVersion": "double-workflows-v1",
+      "promptVersion": "language-v5"
+    }
+  ]
+}

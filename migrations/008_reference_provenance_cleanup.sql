@@ -1,0 +1,5 @@
+ALTER TABLE klaro.lexical_entries ALTER CONSTRAINT lexical_entries_source_record_id_release_id_fkey DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE klaro.lexical_senses ALTER CONSTRAINT lexical_senses_source_record_id_release_id_fkey DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE klaro.lexical_translations ALTER CONSTRAINT lexical_translations_source_record_id_release_id_fkey DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE klaro.lexical_examples ALTER CONSTRAINT lexical_examples_source_record_id_release_id_fkey DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE klaro.lexical_inflections ALTER CONSTRAINT lexical_inflections_source_record_id_release_id_fkey DEFERRABLE INITIALLY DEFERRED;

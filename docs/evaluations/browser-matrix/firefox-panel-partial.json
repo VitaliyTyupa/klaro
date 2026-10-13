@@ -1,0 +1,14 @@
+{
+  "testedAt": "2026-10-13T07:44:33.427Z",
+  "browser": "firefox",
+  "version": "157.0.1",
+  "provider": "double",
+  "partialSurface": "panel",
+  "recommendationPreserved": true,
+  "nativeOnlyRetry": true,
+  "attempts": 4,
+  "copy": true,
+  "logout": true,
+  "closeReopen": true,
+  "nativeShortcut": true
+}

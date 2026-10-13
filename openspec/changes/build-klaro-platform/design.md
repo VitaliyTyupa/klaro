@@ -76,6 +76,10 @@ NestJS modules: `Identity`, `Preferences`, `Operations`, `Usage`, `Correction`, 
 
 Alternative generation і explanation — окремі bounded operations з parent reference та snapshot тексту від клієнта, якщо попередній payload вже expired. Автоматичний back translation — тільки для обраної завершеної recommendation, не для всіх альтернатив і не для streaming chunks. Структурований результат публікується після валідації; спочатку можна показувати stage progress без token streaming.
 
+Уточнення користувача від 2026-10-13: якщо правок немає, результатом є оригінал. «Ще варіанти» отримує набір із щонайбільше трьох альтернатив і показує їх по черзі; після вичерпання набору кнопка недоступна. Перебір не запускає повторну генерацію альтернатив. Початковий мовний результат прийнято для старту; невирішені зауваження збережено в `docs/evaluations/initial-acceptance-and-follow-ups.md` для подальшої розробки. Автоматичне мовне оцінювання доповнюється добровільним feedback і ручним розбором спірних випадків.
+
+Активація підтримує окремий `initial-acceptance-v1` evaluation record із явним прийняттям власником проєкту. Offline export перевіряє звіти та їх відповідність запису прийняття й документу зауважень; нова версія policy зберігає фактичні результати contract/language gate. Registry перевіряє matching model/prompt versions і структуру acceptance, як для інших адміністративних evaluation records. Прийняття не змінює runtime result validation, provider budgets або operator kill switch. Інструкція й межі активації — `docs/evaluations/production-policy-activation.md`.
+
 ### 4. Operation protocol and reliability
 
 Socket.IO обрано для кореляції подій і спільної NestJS integration, REST залишається повноцінним interface. Socket.IO сам по собі не гарантує доставку кожної події: [delivery guarantees](https://socket.io/docs/v4/delivery-guarantees/). Тому reconnect відновлює server snapshot, а не покладається лише на client event history.
@@ -158,6 +162,8 @@ Lexical supplement --> Validate --> Publish with AI provenance
 Початковий source adapter — raw Wiktionary extracts через Wiktextract / Kaikki, які мають багатомовні записи, частини мови, значення й форми, але нерівномірне покриття. Це робить доцільним coverage report до повного імпорту, а не припущення повноти. [Wiktextract](https://github.com/tatuylonen/wiktextract), [raw datasets](https://kaikki.org/dictionary/rawdata.html).
 
 Спочатку sample import для `de`, `en`, `uk`, `vi`, із синтетичними / ліцензійно дозволеними fixtures: регулярні й нерегулярні дієслова, відокремлювані німецькі дієслова, омоніми, іменники, прикметники та службові частини мови. Перевіряються ліцензії конкретних фрагментів, включаючи quotations і media: загальна ліцензія Wiktionary не є дозволом на всі сторонні матеріали. [Wiktionary copyrights](https://en.wiktionary.org/wiki/Wiktionary:Copyrights).
+
+Погоджене правило імпорту: ліцензія перевіреного джерела застосовується до охоплених нею словникових даних без вимоги поля `license` у кожному записі. Приклади з невизначеними правами пропускаються, не блокуючи дозволені фрагменти того самого слова. Для examples потрібне визначене source rule або explicit evidence, прив'язане до content hash; quotations, media та суперечливі права виключаються. Причини виключення враховуються в coverage report. Суцільний ручний перегляд і автоматичний обхід source pages не входять у цей pipeline. Невідомі права самого dataset або невідомі права вже збереженого фрагмента блокують activation.
 
 `SourceRecord` зберігає native source key, source revision, license, attribution, imported content hash. Спершу записи різних джерел не зливаються автоматично за лемою; relationships / sense mapping зберігають невизначеність. `EntrySection` використовує states зі специфікації, source availability та окремий `originKind`: `source`, `machine-translation`, `generated-unverified`. Наявність слова не гарантує перекладів усіма трьома іншими мовами.
 

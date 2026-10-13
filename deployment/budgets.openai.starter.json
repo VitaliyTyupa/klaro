@@ -1,0 +1,10 @@
+{
+  "version": "openai-starter-daily-v1",
+  "userRequestsPerMinute": 10,
+  "userConcurrency": 1,
+  "globalConcurrency": 1,
+  "userDailyTokens": 2000000,
+  "globalDailyTokens": 2000000,
+  "userDailyCostMicrousd": 2000000,
+  "globalDailyCostMicrousd": 2000000
+}

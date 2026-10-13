@@ -1,0 +1,9 @@
+node_modules
+dist
+.angular
+.git
+.env
+.env.*
+!.env.example
+docs/evaluations
+*.key

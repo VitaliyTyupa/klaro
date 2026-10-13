@@ -1,0 +1,24 @@
+{
+  "active": "openai-gpt41mini-policy-v1",
+  "policies": [
+    {
+      "version": "openai-gpt41mini-policy-v1",
+      "model": {
+        "version": "openai-gpt41mini-model-v1",
+        "provider": "openai",
+        "model": "gpt-4.1-mini-2025-04-14",
+        "inputTokenLimit": 16384,
+        "outputTokenLimit": 4096,
+        "timeoutMs": 90000,
+        "structuredOutputs": true
+      },
+      "price": {
+        "version": "openai-gpt41mini-price-2026-10-09",
+        "inputMicrousdPerMillion": 400000,
+        "outputMicrousdPerMillion": 1600000
+      },
+      "workflowVersion": "language-workflows-v1",
+      "promptVersion": "language-v5"
+    }
+  ]
+}

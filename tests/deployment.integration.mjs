@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+const origin = process.env.DEPLOYMENT_TEST_ORIGIN ?? 'http://127.0.0.1:8080';
+const index = await fetch(origin); assert.equal(index.status, 200); assert.match(index.headers.get('content-security-policy'), /script-src 'self'/); assert.match(await index.text(), /klaro-root/);
+assert.equal((await (await fetch(`${origin}/health`)).json()).status, 'ok');
+const disclosure = await (await fetch(`${origin}/v1/privacy/processing`)).json(); assert.equal(disclosure.provider, 'disabled'); assert.equal(disclosure.backend.payloadMaximumMinutes, 30);
+const canary = 'DEPLOYMENT-PRIVATE-CANARY'; const secret = 'DEPLOYMENT-SECRET-CANARY';
+const response = await fetch(`${origin}/v1/operations?private=${canary}`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${secret}` }, body: JSON.stringify({ input: canary }) }); assert.equal(response.status, 401); assert.equal((await response.text()).includes(canary), false);
+const logs = execFileSync('docker', ['compose','-p','klaro-deployment-fixture','-f','compose.yaml','-f','deployment/compose.local.yaml','logs','--no-color','app'], { encoding: 'utf8' }); assert.equal(logs.includes(canary), false); assert.equal(logs.includes(secret), false);
+console.info('Built Docker deployment: frontend, restrictive CSP, proxy/API health, truthful disabled-provider disclosure and log canaries passed');

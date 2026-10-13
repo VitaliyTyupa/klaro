@@ -1,0 +1,11 @@
+{
+  "version": "initial-policy-acceptance-v1",
+  "accepted": true,
+  "acceptedBy": "project-owner",
+  "acceptedOn": "2026-10-13",
+  "rationale": "Користувач визнав поточний результат прийнятним для початку та доручив відобразити прийняття у механізмі активації. Невирішені зауваження відкладено для подальшої розробки. Якщо правок немає, повертається оригінал; альтернативи обмежені трьома й показуються по черзі. Мовне оцінювання автоматичне, feedback добровільний, ручний розбір лише спірних випадків.",
+  "sourceDigest": "dac7c30132ecf0582f60bf38339f85b29adbde2b9f113536e732aa9a30aba51d",
+  "judgeDigest": "b036c66f7c2bed38e5f67fdc88a6d7b76c6448c09756f0774c5eaf7e3b5eb365",
+  "followUps": "docs/evaluations/initial-acceptance-and-follow-ups.md",
+  "followUpsDigest": "8d36965f873c64d9739caa3cb37c13b614dbea06433a7115df13db91dc8b47b9"
+}

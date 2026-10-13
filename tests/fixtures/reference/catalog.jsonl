@@ -1,0 +1,11 @@
+{"word":"machen","lang_code":"de","pos":"verb","senses":[{"glosses":["to make"],"examples":[{"text":"Wir machen das."},{"text":"A quoted sentence.","ref":"novel"}]}],"forms":[{"form":"machte","tags":["past"]}]}
+{"word":"gehen","lang_code":"de","pos":"verb","senses":[{"glosses":["to go"]},{"glosses":["fixture sense 2"]},{"glosses":["fixture sense 3"]},{"glosses":["fixture sense 4"]},{"glosses":["fixture sense 5"]},{"glosses":["fixture sense 6"]}],"forms":[{"form":"ging","tags":["past"]}]}
+{"word":"aufstehen","lang_code":"de","pos":"verb","tags":["separable"],"forms":[{"form":"steht auf","tags":["present"]}]}
+{"word":"Bank","lang_code":"de","pos":"noun","etymology_number":1,"senses":[{"glosses":["bank"]}]}
+{"word":"Bank","lang_code":"de","pos":"noun","etymology_number":2,"senses":[{"glosses":["bench"]}]}
+{"word":"bank","lang_code":"en","pos":"noun","senses":[{"glosses":["financial institution"],"translations":[{"code":"de","word":"Bank"}]}]}
+{"word":"bank","lang_code":"en","pos":"verb","senses":[{"glosses":["to deposit"]}]}
+{"word":"і","lang_code":"uk","pos":"conj","senses":[{"glosses":["and"]}]}
+{"word":"đã","lang_code":"vi","pos":"particle","senses":[{"glosses":["past marker"]}]}
+{"word":"der","lang_code":"de","pos":"article","forms":[{"form":"dem","tags":["dative"]}]}
+{"word":"ignored","lang_code":"fr","pos":"noun"}

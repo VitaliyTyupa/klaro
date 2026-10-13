@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import { ApiReferenceClient } from '../packages/editor/src/reference-client.ts';
+import { applicableSections, matchesSection } from '../apps/api/src/reference/sections.ts';
+import { normalizeReferenceForm, ReferenceLookupSchema } from '@klaro/contracts';
+assert.equal(normalizeReferenceForm('vi', 'đã'), 'đã');
+assert.notEqual(normalizeReferenceForm('vi', 'da'), 'đã');
+assert.equal(normalizeReferenceForm('uk', 'П’ЯТЬ'), "п'ять");
+assert.equal(ReferenceLookupSchema.safeParse({ language: 'de', query: ' ', context: 'private' }).success, false);
+assert.ok(applicableSections('de', 'verb').includes('subjunctive'));
+assert.equal(applicableSections('de', 'noun').includes('subjunctive'), false);
+for (const pos of ['prep', 'conj', 'particle']) assert.equal(applicableSections('de', pos).includes('declension'), false);
+assert.equal(applicableSections('vi', 'verb').includes('forms'), false);
+assert.equal(applicableSections('en', 'noun').includes('gender-article'), false);
+assert.ok(matchesSection('declension', ['dative', 'singular']));
+assert.equal(matchesSection('subjunctive', ['indicative']), false);
+const controller = new AbortController(); let calls = 0; let fail = false;
+const client = new ApiReferenceClient('', () => ({}), async url => {
+  calls++; if (fail) return new Response('{}', { status: 503 });
+  const parsed = new URL(url, 'https://klaro.test');
+  return Response.json({ sourceVersion: parsed.searchParams.get('sourceVersion'), section: parsed.pathname.split('/').at(-1), state: 'missing', items: [] });
+});
+await client.section('entry-a', 'version-a', 'examples', controller.signal);
+await client.section('entry-a', 'version-a', 'examples', controller.signal); assert.equal(calls, 1);
+await client.section('entry-a', 'version-b', 'examples', controller.signal); assert.equal(calls, 2);
+fail = true; await assert.rejects(client.section('entry-a', 'version-a', 'forms', controller.signal), /network/);
+fail = false; await client.section('entry-a', 'version-a', 'forms', controller.signal); assert.equal(calls, 4);
+client.suspend(); await client.section('entry-a', 'version-a', 'examples', controller.signal); assert.equal(calls, 5);

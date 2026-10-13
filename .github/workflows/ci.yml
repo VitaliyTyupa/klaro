@@ -1,0 +1,45 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global npm@12.0.2
+      - run: npm ci --ignore-scripts
+      - run: npm run ci
+  reference-integration:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-bookworm
+        env:
+          POSTGRES_DB: klaro
+          POSTGRES_USER: klaro
+          POSTGRES_PASSWORD: klaro-local-development
+        ports: ["5433:5432"]
+        options: >-
+          --health-cmd "pg_isready -U klaro -d klaro"
+          --health-interval 2s --health-timeout 3s --health-retries 30
+      redis:
+        image: redis:7.4-bookworm
+        ports: ["6380:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 2s --health-timeout 3s --health-retries 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global npm@12.0.2
+      - run: npm ci --ignore-scripts
+      - run: npm run db:migrate
+      - run: npm run test:reference

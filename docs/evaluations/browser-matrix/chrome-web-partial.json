@@ -1,0 +1,15 @@
+{
+  "testedAt": "2026-10-13T07:38:03.948Z",
+  "browser": "chrome",
+  "version": "154.0.8037.57",
+  "provider": "double",
+  "partialSurface": "web",
+  "recommendationPreserved": true,
+  "nativeOnlyRetry": true,
+  "attempts": 7,
+  "reconnect": true,
+  "copy": true,
+  "quota": true,
+  "logout": true,
+  "closeReopen": true
+}

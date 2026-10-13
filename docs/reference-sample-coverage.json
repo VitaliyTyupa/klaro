@@ -1,0 +1,29 @@
+{
+  "lines": 12,
+  "importedEntries": 10,
+  "ignoredLanguages": 1,
+  "duplicates": 1,
+  "partsOfSpeech": {
+    "en:noun": 1,
+    "de:verb": 3,
+    "vi:particle": 1,
+    "de:noun": 2,
+    "uk:conj": 1,
+    "de:article": 1,
+    "en:verb": 1
+  },
+  "translationLanguages": {
+    "en:de": 1
+  },
+  "sections": {
+    "de:definitions": 9,
+    "de:examples": 1,
+    "de:forms": 4,
+    "en:definitions": 2,
+    "uk:definitions": 1,
+    "vi:definitions": 1
+  },
+  "exclusions": {
+    "quotation-unverified": 2
+  }
+}

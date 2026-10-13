@@ -1,0 +1,14 @@
+{
+  "name": "@klaro/editor",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./session": "./src/session.ts",
+    "./api-client": "./src/api-client.ts",
+    "./reference-client": "./src/reference-client.ts",
+    "./reference": "./src/reference.ts",
+    "./privacy": "./src/privacy.ts",
+    "./processing-consent": "./src/processing-consent.ts"
+  }
+}

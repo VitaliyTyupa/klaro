@@ -1,0 +1,306 @@
+{
+  "version": "v1",
+  "fixtureVersion": "synthetic-language-v1",
+  "modelPolicyVersion": "double-v1",
+  "promptVersion": "language-v5",
+  "provider": "double",
+  "realModelEvaluation": false,
+  "languageReadiness": "unreviewed",
+  "apiBudgetMicrousd": 0,
+  "createdAt": "2026-10-09T10:21:53.323Z",
+  "summary": {
+    "cases": 12,
+    "contractPassed": 12,
+    "humanReviewPassed": false
+  },
+  "cases": [
+    {
+      "caseId": "de-facts",
+      "language": "de",
+      "input": "Ich werde am 12. März genau 3 Pakete an Mia liefern.",
+      "output": "Ich werde am 12. März genau 3 Pakete an Mia liefern.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "de-negation",
+      "language": "de",
+      "input": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+      "output": "Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "de-style",
+      "language": "de",
+      "input": "Kannst du mir die Datei senden? Ich bin mir nicht sicher.",
+      "output": "Kannst du mir die Datei senden? Ich bin mir nicht sicher.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "en-facts",
+      "language": "en",
+      "input": "I will deliver exactly 3 packages to Mia on March 12.",
+      "output": "I will deliver exactly 3 packages to Mia on March 12.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "en-negation",
+      "language": "en",
+      "input": "I do not promise to sign contract ABC-123.",
+      "output": "I do not promise to sign contract ABC-123.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "en-style",
+      "language": "en",
+      "input": "Could you send me the file? I am not sure.",
+      "output": "Could you send me the file? I am not sure.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "uk-facts",
+      "language": "uk",
+      "input": "Я доставлю Мії рівно 3 пакунки 12 березня.",
+      "output": "Я доставлю Мії рівно 3 пакунки 12 березня.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "uk-negation",
+      "language": "uk",
+      "input": "Я не обіцяю підписати договір ABC-123.",
+      "output": "Я не обіцяю підписати договір ABC-123.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "uk-style",
+      "language": "uk",
+      "input": "Чи можете надіслати файл? Я не впевнений.",
+      "output": "Чи можете надіслати файл? Я не впевнений.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "vi-facts",
+      "language": "vi",
+      "input": "Tôi sẽ giao đúng 3 gói hàng cho Mia vào ngày 12 tháng 3.",
+      "output": "Tôi sẽ giao đúng 3 gói hàng cho Mia vào ngày 12 tháng 3.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "vi-negation",
+      "language": "vi",
+      "input": "Tôi không hứa ký hợp đồng ABC-123.",
+      "output": "Tôi không hứa ký hợp đồng ABC-123.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    },
+    {
+      "caseId": "vi-style",
+      "language": "vi",
+      "input": "Bạn có thể gửi tệp cho tôi không? Tôi chưa chắc chắn.",
+      "output": "Bạn có thể gửi tệp cho tôi không? Tôi chưa chắc chắn.",
+      "contract": "passed",
+      "automatedIndicators": {
+        "numbersPresent": true,
+        "protectedTermsPresent": true
+      },
+      "humanReview": {
+        "grammar": "pending",
+        "meaning": "pending",
+        "facts": "pending",
+        "numbers": "pending",
+        "negation": "pending",
+        "commitment": "pending",
+        "style": "pending",
+        "protected-terms": "pending",
+        "ambiguity": "pending"
+      },
+      "reviewer": null,
+      "notes": null
+    }
+  ]
+}

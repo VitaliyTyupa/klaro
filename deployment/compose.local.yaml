@@ -1,0 +1,48 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://klaro:${POSTGRES_PASSWORD:-klaro-local-development}@postgres:5432/klaro
+      REDIS_URL: redis://redis:6379
+      APP_ORIGIN: http://localhost:8080
+      PUBLIC_HOST: 0.0.0.0
+      PUBLIC_PORT: 8080
+      PORT: 3000
+      AI_PROVIDER: ${AI_PROVIDER:-}
+      AI_ENABLED: ${AI_ENABLED:-false}
+      AI_POLICY_FILE: /run/klaro/policies.json
+      AI_BUDGET_FILE: /run/klaro/budgets.json
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPERATION_HMAC_KEY: ${OPERATION_HMAC_KEY:-}
+      OIDC_ISSUER: ${OIDC_ISSUER:-}
+      OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-}
+      OIDC_CLIENT_SECRET: ${OIDC_CLIENT_SECRET:-}
+      OIDC_ALLOW_LOOPBACK_HTTP: ${OIDC_ALLOW_LOOPBACK_HTTP:-false}
+      EXTENSION_ORIGINS: ${EXTENSION_ORIGINS:-}
+      EXTENSION_CALLBACKS: ${EXTENSION_CALLBACKS:-}
+      PROVIDER_RETENTION_NOTICE: ${PROVIDER_RETENTION_NOTICE:-}
+      ADMIN_TOKEN: ${ADMIN_TOKEN:-}
+      ADMIN_ACTOR: ${ADMIN_ACTOR:-}
+      DELETION_JOURNAL_FILE: /var/lib/klaro-journal/deletions.jsonl.enc
+      DELETION_JOURNAL_KEY: ${DELETION_JOURNAL_KEY:-}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - deletion-journal:/var/lib/klaro-journal
+      - ${MODEL_POLICY_FILE:-./deployment/policies.disabled.json}:/run/klaro/policies.json:ro
+      - ${MODEL_BUDGET_FILE:-./deployment/budgets.disabled.json}:/run/klaro/budgets.json:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+volumes:
+  deletion-journal:

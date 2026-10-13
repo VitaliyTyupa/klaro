@@ -1,0 +1,77 @@
+import { testSupplements } from './reference-supplements.fixture.mjs';
+import assert from 'node:assert/strict';
+import { readFile, writeFile, mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { gzipSync } from 'node:zlib';
+import pg from 'pg';
+import repositoryModule from '../dist/reference-import/repository.js';
+import admissionModule from '../dist/reference-import/admission.js';
+import serviceModule from '../dist/api/reference/service.js';
+import streamModule from '../dist/reference-import/stream.js';
+const { ReferenceRepository } = repositoryModule;
+const { contentHash } = admissionModule;
+const { fileHash } = streamModule;
+const url = process.env.DATABASE_URL ?? 'postgresql://klaro:klaro-local-development@127.0.0.1:5433/klaro';
+const pool = new pg.Pool({ connectionString: url }); const repository = new ReferenceRepository(url, true);
+const directory = await mkdtemp(join(tmpdir(), 'klaro-reference-')); const releases = [];
+const active = (await pool.query('SELECT release_id FROM klaro.active_dataset')).rows[0]?.release_id;
+try {
+  const template = JSON.parse(await readFile('reference/sources/kaikki-en.json', 'utf8'));
+  const source = await readFile('tests/fixtures/reference/catalog.jsonl', 'utf8');
+  const example = { text: 'Wir machen das.' };
+  const path = join(directory, 'sample.jsonl.gz'); await writeFile(path, gzipSync(source + source.split('\n')[0] + '\n'));
+  const manifest = { ...template, sourceId: 'synthetic-fixture', sourceRevision: `fixture-${Date.now()}`, license: 'CC0-1.0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/', sha256: await fileHash(path), exampleEvidence: [{ contentHash: contentHash(example), license: 'CC0-1.0', evidenceUrl: 'https://example.org/fixture', attribution: 'Klaro synthetic fixture authors' }] };
+  await assert.rejects(repository.importFile({ ...manifest, rightsStatus: 'unknown' }, path));
+  await assert.rejects(repository.importFile(manifest, path, { batchSize: 2, afterBatch: () => { throw new Error('simulated crash'); } }), /simulated crash/);
+  const staging = (await pool.query('SELECT id FROM klaro.dataset_releases WHERE source_revision = $1', [manifest.sourceRevision])).rows[0].id; releases.push(staging);
+  await assert.rejects(repository.validate(staging), /incomplete/);
+  assert.equal((await pool.query('SELECT release_id FROM klaro.active_dataset')).rows[0]?.release_id, active);
+  const imported = await repository.importFile(manifest, path, { batchSize: 2 }); assert.equal(imported.releaseId, staging);
+  assert.equal(imported.coverage.importedEntries, 10); assert.equal(imported.coverage.duplicates, 1); assert.equal(imported.coverage.exclusions['quotation-unverified'], 2);
+  assert.equal((await repository.importFile(manifest, path)).noOp, true);
+  await repository.validate(staging);
+  await pool.query("UPDATE klaro.dataset_releases SET manifest = jsonb_set(manifest, '{rightsStatus}', $2::jsonb) WHERE id = $1", [staging, JSON.stringify('unknown')]);
+  await assert.rejects(repository.activate(staging), /not admitted/);
+  await pool.query('UPDATE klaro.dataset_releases SET manifest = $2 WHERE id = $1', [staging, JSON.stringify(manifest)]);
+  await repository.activate(staging);
+  const service = new serviceModule.ReferenceService(url);
+  try {
+    const lookup = await service.lookup('de', 'Bank'); assert.equal(lookup.candidates.length, 2);
+    assert.equal((await service.lookup('en', 'bank')).candidates.length, 2);
+    const inflected = await service.lookup('de', 'ging'); assert.equal(inflected.candidates[0].lemma, 'gehen');
+    const separable = await service.lookup('de', 'steht auf'); assert.equal(separable.candidates[0].lemma, 'aufstehen');
+    assert.equal((await service.lookup('vi', 'đa')).candidates.length, 0);
+    assert.equal((await service.lookup('vi', 'đã')).candidates[0].lemma, 'đã');
+    const card = await service.card(inflected.candidates[0].id, staging, 'uk'); assert.equal(card.senses[0].translations.length, 0); assert.equal(card.senses[0].definitions[0], 'to go');
+    assert.equal((await service.section(inflected.candidates[0].id, staging, 'declension')).state, 'not-applicable');
+    assert.equal((await service.section(inflected.candidates[0].id, staging, 'subjunctive')).state, 'missing');
+    const made = (await service.lookup('de', 'machen')).candidates[0];
+    const madeCard = await service.card(made.id, staging, 'uk'); assert.equal(madeCard.senses[0].examples.length, 1); assert.ok(madeCard.senses[0].examples[0].provenance.attribution);
+    await testSupplements(pool, url, service, staging);
+    assert.equal(await service.card(made.id, '00000000-0000-4000-a000-000000000000', 'uk'), undefined);
+  } finally { await service.close(); }
+  const banks = (await pool.query("SELECT * FROM klaro.admitted_lexical_entries WHERE normalized_lemma = 'bank'")).rows; assert.equal(banks.length, 4);
+  assert.equal((await pool.query('SELECT count(*) FROM klaro.lexical_examples WHERE release_id = $1', [staging])).rows[0].count, '1');
+  assert.equal((await pool.query('SELECT count(*) FROM klaro.lexical_inflections WHERE release_id = $1', [staging])).rows[0].count, '4');
+  await repository.takedown('synthetic-fixture', 'fixture-test', { nativeKey: banks[0].native_key });
+  await repository.activate(staging); assert.equal((await pool.query("SELECT count(*) FROM klaro.admitted_lexical_entries WHERE normalized_lemma = 'bank'")).rows[0].count, '3');
+  const replacementPath = join(directory, 'replacement.jsonl.gz'); await writeFile(replacementPath, gzipSync(source.split('\n').filter(line => !line.includes('to deposit')).join('\n')));
+  const replacement = await repository.importFile({ ...manifest, sourceRevision: `${manifest.sourceRevision}-next`, sha256: await fileHash(replacementPath) }, replacementPath); releases.push(replacement.releaseId);
+  await repository.validate(replacement.releaseId); await repository.activate(replacement.releaseId);
+  assert.equal((await pool.query("SELECT count(*) FROM klaro.admitted_lexical_entries WHERE language = 'en'")).rows[0].count, '1');
+  // Only the newly activated release is visible; removed entries stay absent.
+  const request = async () => new Response('fixture metadata');
+  const checked = await repository.checkUpdate(manifest, new Date(), false, request); assert.equal(checked.checked, true);
+  assert.equal((await repository.checkUpdate(manifest, new Date(), true, () => { throw new Error('must not fetch'); })).checked, false);
+  await repository.revokeSource('synthetic-fixture'); await assert.rejects(repository.activate(staging));
+  await writeFile('docs/reference-sample-coverage.json', JSON.stringify(imported.coverage, null, 2) + '\n');
+  console.info('Reference integration passed: streaming, homonyms, rights, restart, activation, removals, rollback, monthly checks');
+} finally {
+  await pool.query('DELETE FROM klaro.active_dataset WHERE release_id = ANY($1::uuid[])', [releases]);
+  if (active) await pool.query('INSERT INTO klaro.active_dataset (singleton, release_id) VALUES (true, $1) ON CONFLICT (singleton) DO UPDATE SET release_id = excluded.release_id', [active]);
+  await pool.query("DELETE FROM klaro.reference_takedowns WHERE source_id = 'synthetic-fixture' AND reason = 'fixture-test'");
+  await pool.query("DELETE FROM klaro.reference_update_checks WHERE source_id = 'synthetic-fixture'");
+  await pool.query('DELETE FROM klaro.dataset_releases WHERE id = ANY($1::uuid[])', [releases]);
+  await repository.close(); await pool.end(); await rm(directory, { recursive: true, force: true });
+}

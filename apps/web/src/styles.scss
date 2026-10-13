@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((color: (primary: mat.$azure-palette), typography: system-ui, density: 0));
+  @include mat.button-overrides((text-label-text-color: #004f9e));
+}
+body { margin: 0; font-family: system-ui, sans-serif; }
+
+main { max-width: 800px; margin: 0 auto; padding: 16px; }

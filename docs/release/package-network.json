@@ -1,0 +1,31 @@
+{
+  "testedAt": "2026-10-13T07:42:39.179Z",
+  "status": "passed",
+  "limitation": "Request destinations inspected; placeholder backend is not deployed. Authenticated workflows covered by separate local OIDC/provider-double tests.",
+  "results": [
+    {
+      "browser": "chrome",
+      "version": "154.0.8037.57",
+      "scenario": "production package open + manual typing without login or send",
+      "requests": [],
+      "observerVerified": true,
+      "passed": true
+    },
+    {
+      "browser": "edge",
+      "version": "155.0.4283.45",
+      "scenario": "production package open + manual typing without login or send",
+      "requests": [],
+      "observerVerified": true,
+      "passed": true
+    },
+    {
+      "browser": "firefox",
+      "version": "157.0.1",
+      "scenario": "production sidebar open + manual typing without login or send",
+      "requests": [],
+      "observerVerified": true,
+      "passed": true
+    }
+  ]
+}

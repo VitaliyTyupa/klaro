@@ -1,0 +1,16 @@
+import { gateDecision, evaluationItems, judgmentVerdict } from './language-judge.mjs';
+
+const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+export function renderJudgeReview(source, judged, resolutions = []) {
+  const decision = gateDecision(source, judged, resolutions);
+  const items = evaluationItems(source, source.policy);
+  const rows = items.map(item => {
+    const grade = judged.results.find(r => r.id === item.id);
+    const verdict = grade?.judgment ? judgmentVerdict(grade.judgment) : 'unavailable';
+    return { item, grade, verdict };
+  });
+  const technical = rows.filter(r => r.item.contract !== 'passed');
+  const flagged = rows.filter(r => r.verdict !== 'pass');
+  const details = rows.sort((a,b) => Number(b.verdict !== 'pass') - Number(a.verdict !== 'pass') || Number(b.item.contract !== 'passed') - Number(a.item.contract !== 'passed')).map(({ item, grade, verdict }) => `<details ${verdict !== 'pass' ? 'open' : ''}><summary>${escape(item.id)} — мова: ${escape(verdict)}, contract: ${escape(item.contract)}</summary><h3>Вхід</h3><pre>${escape(item.payload?.input)}</pre>${item.payload?.context ? `<p>Контекст: ${escape(item.payload.context)}</p>` : ''}<h3>Результат</h3>${(item.payload?.outputs ?? []).map(text => `<pre>${escape(text)}</pre>`).join('')}<p>${escape(grade?.judgment?.notes)}</p><p>Зміст: ${escape(grade?.judgment?.meaning)}; мова: ${escape(grade?.judgment?.language)}; завдання: ${escape(grade?.judgment?.instruction)}.</p></details>`).join('');
+  return `<!doctype html><html lang="uk"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Klaro — оцінка мовного gate</title><style>body{font:17px/1.55 system-ui;color:#172334;max-width:1050px;margin:auto;padding:24px;background:#f6f8fb}h1{line-height:1.2}section,details{background:white;border:1px solid #ccd5e1;border-radius:8px;padding:16px;margin:14px 0}summary{cursor:pointer;font-weight:600}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;background:#f0f3f8;padding:12px}code{overflow-wrap:anywhere}:focus-visible{outline:3px solid #005cbb}</style><main><h1>Автоматична мовна оцінка Klaro</h1><section><p>Експериментальна перевірка збережених синтетичних відповідей. Це оцінка моделі, а не підтвердження правильності людиною.</p><p><strong>Gate: ${decision.passed ? 'пройшов' : 'заблоковано'}</strong>. Калібровка: ${decision.calibrationPassed ? '12/12' : 'не пройшла'}. Витрати оцінювача: $${(decision.actualCostMicrousd / 1000000).toFixed(6)}.</p><p>Мовна оцінка: ${rows.length - flagged.length} pass, ${decision.failed.length} fail, ${decision.pending.length} pending. Невдалі технічні contracts: ${technical.length}; відсутні planned stages: ${source.plan.plannedCalls - items.length}.</p><p>Модель: ${escape(judged.plan.judge.model)}. Prompt: ${escape(judged.plan.judge.promptVersion)}.</p><p>Source: <code>${escape(source.reportId)}</code>. Judge: <code>${escape(judged.reportId)}</code>.</p><p>Можна вручну розібрати конкретні fail або uncertain, з якими ви не погоджуєтеся. Це окремий resolution із reviewer, датою й поясненням. Технічні failures та калібровку він не обходить; JSON machine evidence залишається незмінним.</p></section><h2>Відповіді й пояснення</h2>${details}</main></html>`;
+}

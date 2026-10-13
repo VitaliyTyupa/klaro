@@ -1,0 +1,1598 @@
+{
+  "version": "language-judge-report-v1",
+  "reportId": "judge-df038129-e57c-419e-8108-d90cbb2fcd3c",
+  "createdAt": "2026-10-13T05:36:05.392Z",
+  "plan": {
+    "sourceReportId": "language-eval-e98a29bb-3299-4a89-b3d1-67e2c401f27f",
+    "sourceDigest": "dac7c30132ecf0582f60bf38339f85b29adbde2b9f113536e732aa9a30aba51d",
+    "judge": {
+      "model": "gpt-4.1-2025-04-14",
+      "promptVersion": "language-judge-v1",
+      "inputTokenLimit": 4096,
+      "outputTokenLimit": 512,
+      "price": {
+        "version": "gpt41-standard-2026-10-13",
+        "inputMicrousdPerMillion": 2000000,
+        "outputMicrousdPerMillion": 8000000
+      }
+    },
+    "calibrationVersion": "language-judge-calibration-v1",
+    "calibrationDigest": "1820cfc10e34f1c8f43c6f84d5e795697230f150b1d93793ff8fc91e878d84ae",
+    "calibrationCalls": 12,
+    "evaluationCalls": 80,
+    "maxCalls": 92,
+    "callBoundMicrousd": 12288,
+    "maxCostMicrousd": 1130496,
+    "contractPassed": false
+  },
+  "budgetMicrousd": 2000000,
+  "state": "completed",
+  "results": [
+    {
+      "id": "calibration-uk-correct",
+      "usageKind": "actual",
+      "costMicrousd": 1292,
+      "dispatchedAt": "2026-10-13T05:36:05.399Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 73
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Виправлено граматичну помилку: дієслово 'надіслав' змінено на 'надіслала' згідно з жіночим родом. Решта речення не змінювалася без необхідності."
+      },
+      "completedAt": "2026-10-13T05:36:08.571Z"
+    },
+    {
+      "id": "calibration-uk-grammar",
+      "usageKind": "actual",
+      "costMicrousd": 1316,
+      "dispatchedAt": "2026-10-13T05:36:08.572Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 76
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "fail",
+        "instruction": "pass",
+        "notes": "Meaning fails because 'надіслав' is masculine, while the subject 'Вона' is feminine; verb gender agreement is broken. Language fails because of this ungrammaticality. Instruction passes as the user applied a correction operation, but the result is incorrect due to verb agreement."
+      },
+      "completedAt": "2026-10-13T05:36:10.053Z"
+    },
+    {
+      "id": "calibration-uk-negation",
+      "usageKind": "actual",
+      "costMicrousd": 1226,
+      "dispatchedAt": "2026-10-13T05:36:10.054Z",
+      "usage": {
+        "inputTokens": 357,
+        "outputTokens": 64
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Змінився зміст: у виправленому реченні стверджується, що обіцяв підписати, тоді як у оригіналі заперечення («не обіцяв»)."
+      },
+      "completedAt": "2026-10-13T05:36:11.409Z"
+    },
+    {
+      "id": "calibration-de-correct",
+      "usageKind": "actual",
+      "costMicrousd": 1228,
+      "dispatchedAt": "2026-10-13T05:36:11.409Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 65
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Bedeutungsänderung wurde korrekt vorgenommen, indem die höfliche Anrede („Sie haben“) in die 3. Person Singular („Sie hat“) geändert wurde; grammatikalisch und stilistisch korrekt, Kontext angemessen beachtet."
+      },
+      "completedAt": "2026-10-13T05:36:12.936Z"
+    },
+    {
+      "id": "calibration-de-grammar",
+      "usageKind": "actual",
+      "costMicrousd": 1356,
+      "dispatchedAt": "2026-10-13T05:36:12.937Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 81
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Korrektur ändert das Subjekt von 'Sie' (3. Person Singular, weiblich) auf 'Sie' (2. Person Plural oder Höflichkeitsform), was nicht erlaubt ist, da laut Kontext 'Sie' eine einzelne Frau meint und keine Anrede ist. Inhaltlicher Fehler."
+      },
+      "completedAt": "2026-10-13T05:36:13.986Z"
+    },
+    {
+      "id": "calibration-de-negation",
+      "usageKind": "actual",
+      "costMicrousd": 1114,
+      "dispatchedAt": "2026-10-13T05:36:13.986Z",
+      "usage": {
+        "inputTokens": 365,
+        "outputTokens": 48
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Korrektur hat die Negation entfernt; ursprünglich war \"nicht versprochen\", aber im Output steht \"versprochen\", was die Bedeutung ändert."
+      },
+      "completedAt": "2026-10-13T05:36:14.849Z"
+    },
+    {
+      "id": "calibration-en-correct",
+      "usageKind": "actual",
+      "costMicrousd": 1072,
+      "dispatchedAt": "2026-10-13T05:36:14.849Z",
+      "usage": {
+        "inputTokens": 344,
+        "outputTokens": 48
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The correction fixes the subject-verb agreement error ('have' to 'sent') and maintains the original meaning while using proper English grammar for the past tense."
+      },
+      "completedAt": "2026-10-13T05:36:16.445Z"
+    },
+    {
+      "id": "calibration-en-grammar",
+      "usageKind": "actual",
+      "costMicrousd": 1232,
+      "dispatchedAt": "2026-10-13T05:36:16.446Z",
+      "usage": {
+        "inputTokens": 344,
+        "outputTokens": 68
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "fail",
+        "instruction": "pass",
+        "notes": "Meaning: Incorrect tense and subject-verb agreement, changes simple past to present perfect. Language: 'She have sent' is ungrammatical; should be 'has sent'. Instruction: The correction stage was intended, but output introduced new grammatical errors."
+      },
+      "completedAt": "2026-10-13T05:36:17.416Z"
+    },
+    {
+      "id": "calibration-en-negation",
+      "usageKind": "actual",
+      "costMicrousd": 1082,
+      "dispatchedAt": "2026-10-13T05:36:17.416Z",
+      "usage": {
+        "inputTokens": 349,
+        "outputTokens": 48
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The output changes the meaning by removing the negation; the correction does not preserve that the subject did NOT promise, which is critical to the original fact."
+      },
+      "completedAt": "2026-10-13T05:36:18.326Z"
+    },
+    {
+      "id": "calibration-vi-correct",
+      "usageKind": "actual",
+      "costMicrousd": 1162,
+      "dispatchedAt": "2026-10-13T05:36:18.327Z",
+      "usage": {
+        "inputTokens": 357,
+        "outputTokens": 56
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Đáp án đã loại bỏ từ \"đã\" dư thừa, giữ nghĩa gốc, dùng ngữ pháp và từ ngữ tự nhiên, thực hiện đúng yêu cầu sửa lỗi."
+      },
+      "completedAt": "2026-10-13T05:36:19.681Z"
+    },
+    {
+      "id": "calibration-vi-grammar",
+      "usageKind": "actual",
+      "costMicrousd": 1282,
+      "dispatchedAt": "2026-10-13T05:36:19.682Z",
+      "usage": {
+        "inputTokens": 357,
+        "outputTokens": 71
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "fail",
+        "instruction": "pass",
+        "notes": "Sai thứ tự động từ và trợ động từ trong câu \"Cô ấy gửi đã bức thư hôm qua.\" khiến câu không đúng ngữ pháp và không giữ được nghĩa gốc. Đáp án loại bỏ thứ tự đúng của thành phần trong câu gốc."
+      },
+      "completedAt": "2026-10-13T05:36:21.211Z"
+    },
+    {
+      "id": "calibration-vi-negation",
+      "usageKind": "actual",
+      "costMicrousd": 1164,
+      "dispatchedAt": "2026-10-13T05:36:21.212Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 57
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "fail",
+        "notes": "Đầu ra đã loại bỏ phủ định 'không', chuyển nghĩa sang khẳng định, làm sai lệch ý gốc. Câu sửa đúng phải giữ phủ định như bản gốc."
+      },
+      "completedAt": "2026-10-13T05:36:22.228Z"
+    },
+    {
+      "id": "de-facts:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1004,
+      "dispatchedAt": "2026-10-13T05:36:22.229Z",
+      "usage": {
+        "inputTokens": 358,
+        "outputTokens": 36
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Der Originalsatz ist korrekt, keine Änderungen notwendig. Alle Fakten, Namen und Zahlen bleiben erhalten."
+      },
+      "completedAt": "2026-10-13T05:36:23.219Z"
+    },
+    {
+      "id": "de-negation:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1070,
+      "dispatchedAt": "2026-10-13T05:36:23.220Z",
+      "usage": {
+        "inputTokens": 355,
+        "outputTokens": 45
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Der Output ist identisch mit dem Input und enthält keine Fehler. Die geschützte Bezeichnung 'ABC-123' wurde korrekt erhalten."
+      },
+      "completedAt": "2026-10-13T05:36:24.386Z"
+    },
+    {
+      "id": "de-negation:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1432,
+      "dispatchedAt": "2026-10-13T05:36:24.387Z",
+      "usage": {
+        "inputTokens": 356,
+        "outputTokens": 90
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Збережено заперечення, згадану угоду і значення речення. Українська мова є правильною, фраза відповідає стилю початкового рівня (A2), і синтаксис коректний. Стиль відповідає завданню, захищений термін залишено без змін."
+      },
+      "completedAt": "2026-10-13T05:36:25.544Z"
+    },
+    {
+      "id": "de-style:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1116,
+      "dispatchedAt": "2026-10-13T05:36:25.544Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 51
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Der Ausgangstext ist bereits korrekt und entspricht dem gewünschten Korrektur-Stil sowie dem B2-Niveau; keine Fehler in Grammatik oder Ausdruck erkennbar."
+      },
+      "completedAt": "2026-10-13T05:36:27.611Z"
+    },
+    {
+      "id": "de-style:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1272,
+      "dispatchedAt": "2026-10-13T05:36:27.612Z",
+      "usage": {
+        "inputTokens": 360,
+        "outputTokens": 69
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Übersetzung gibt den Sinn vollständig und korrekt wieder, verwendet korrekt das formelle Ukrainisch und erfüllt die Korrekturanforderung ohne Abweichung von der Bedeutung. Die geschützte Vokabel 'Datei' wurde kontextgerecht übersetzt."
+      },
+      "completedAt": "2026-10-13T05:36:29.214Z"
+    },
+    {
+      "id": "en-facts:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1076,
+      "dispatchedAt": "2026-10-13T05:36:29.215Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 46
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The output matches the input exactly, preserving all facts, numbers, and names. The sentence is correct and neutral, and no changes were needed."
+      },
+      "completedAt": "2026-10-13T05:36:30.149Z"
+    },
+    {
+      "id": "en-negation:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1018,
+      "dispatchedAt": "2026-10-13T05:36:30.150Z",
+      "usage": {
+        "inputTokens": 349,
+        "outputTokens": 40
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The output repeats the input exactly, preserving meaning, grammar, and the protected term. It fulfills the correction stage."
+      },
+      "completedAt": "2026-10-13T05:36:31.041Z"
+    },
+    {
+      "id": "en-negation:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1226,
+      "dispatchedAt": "2026-10-13T05:36:31.042Z",
+      "usage": {
+        "inputTokens": 353,
+        "outputTokens": 65
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Збережено факти й стиль, граматика правильна, іменований термін не змінений. Відповідь коректно виправлена до природної української мови на початковому рівні."
+      },
+      "completedAt": "2026-10-13T05:36:32.866Z"
+    },
+    {
+      "id": "en-style:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1298,
+      "dispatchedAt": "2026-10-13T05:36:32.866Z",
+      "usage": {
+        "inputTokens": 349,
+        "outputTokens": 75
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "fail",
+        "notes": "No correction was made; the output matches the input. At B2, minor improvements would include clarifying 'I am not sure' (e.g., 'I am not sure if you have already sent it'), as the original is vague. Formal style is requested but was not enhanced."
+      },
+      "completedAt": "2026-10-13T05:36:34.897Z"
+    },
+    {
+      "id": "en-style:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1268,
+      "dispatchedAt": "2026-10-13T05:36:34.898Z",
+      "usage": {
+        "inputTokens": 358,
+        "outputTokens": 69
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Переклад точно передає зміст оригіналу, граматично правильний, стиль формальний. Термін 'file' перекладено коректно. Більше жодних значущих відхилень немає."
+      },
+      "completedAt": "2026-10-13T05:36:36.038Z"
+    },
+    {
+      "id": "uk-facts:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1242,
+      "dispatchedAt": "2026-10-13T05:36:36.039Z",
+      "usage": {
+        "inputTokens": 361,
+        "outputTokens": 65
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Число три замінено словами, що відповідає стилю A2 і зберігає дані. Ім’я «Мії» залишено незмінним, граматичних помилок немає."
+      },
+      "completedAt": "2026-10-13T05:36:36.985Z"
+    },
+    {
+      "id": "uk-negation:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1126,
+      "dispatchedAt": "2026-10-13T05:36:36.985Z",
+      "usage": {
+        "inputTokens": 359,
+        "outputTokens": 51
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Текст повністю зберігає зміст, граматику та стиль оригіналу, і захищений термін залишений без змін."
+      },
+      "completedAt": "2026-10-13T05:36:37.787Z"
+    },
+    {
+      "id": "uk-negation:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1396,
+      "dispatchedAt": "2026-10-13T05:36:37.790Z",
+      "usage": {
+        "inputTokens": 358,
+        "outputTokens": 85
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Bedeutung ist beibehalten, besonders die Negation ('не обіцяю' = 'verspreche nicht'). Die Sprache ist grammatikalisch korrekt und auf A2-Niveau verständlich. Die Vorgabe wurde eingehalten und der Stil ist neutral. Der geschützte Begriff 'ABC-123' ist erhalten geblieben."
+      },
+      "completedAt": "2026-10-13T05:36:39.502Z"
+    },
+    {
+      "id": "uk-style:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1196,
+      "dispatchedAt": "2026-10-13T05:36:39.502Z",
+      "usage": {
+        "inputTokens": 358,
+        "outputTokens": 60
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Фраза зберігає всі факти, застосовано мінімальне виправлення (у цьому), стиль залишився формальним, protected term «файл» незмінний."
+      },
+      "completedAt": "2026-10-13T05:36:40.480Z"
+    },
+    {
+      "id": "vi-facts:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1124,
+      "dispatchedAt": "2026-10-13T05:36:40.480Z",
+      "usage": {
+        "inputTokens": 366,
+        "outputTokens": 49
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Không có lỗi trong câu gốc; bản sửa đổi giống hệt câu gốc, giữ nguyên số liệu, ngày tháng và tên riêng như yêu cầu."
+      },
+      "completedAt": "2026-10-13T05:36:41.741Z"
+    },
+    {
+      "id": "vi-facts:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1318,
+      "dispatchedAt": "2026-10-13T05:36:41.742Z",
+      "usage": {
+        "inputTokens": 367,
+        "outputTokens": 73
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Сorrect transmission of the number (3), item (packets), recipient (Mia), and date (12 березня). Neutral style used; 'доставлю' fits the context for 'giao' in Ukrainian. No third-person address, style is neutral."
+      },
+      "completedAt": "2026-10-13T05:36:43.175Z"
+    },
+    {
+      "id": "vi-negation:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1046,
+      "dispatchedAt": "2026-10-13T05:36:43.176Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 43
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Ausgabe ist identisch mit dem Original und korrekt; keine Fehler zu korrigieren, geschützter Begriff beibehalten."
+      },
+      "completedAt": "2026-10-13T05:36:44.160Z"
+    },
+    {
+      "id": "vi-negation:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1324,
+      "dispatchedAt": "2026-10-13T05:36:44.160Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 77
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Зміст точно передано: \"не обіцяю підписати\" адекватно відповідає \"không hứa ký\"; назва контракту залишена без змін як захищений термін. Мова граматично правильна та нейтральна."
+      },
+      "completedAt": "2026-10-13T05:36:45.815Z"
+    },
+    {
+      "id": "vi-style:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1280,
+      "dispatchedAt": "2026-10-13T05:36:45.816Z",
+      "usage": {
+        "inputTokens": 356,
+        "outputTokens": 71
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Câu đầu tiên đã đúng và giữ nguyên thuật ngữ bảo vệ 'tệp'. Câu thứ hai ('Tôi chưa chắc chắn.') cũng đúng ngữ pháp và tự nhiên trong phong cách trang trọng tiếng Việt. Không có lỗi nghiêm trọng cần sửa."
+      },
+      "completedAt": "2026-10-13T05:36:46.873Z"
+    },
+    {
+      "id": "uk-grammar:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1508,
+      "dispatchedAt": "2026-10-13T05:36:46.873Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 100
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Виправлено граматичну помилку: 'надіслав' (чоловічий рід) виправлено на 'надіслала' (жіночий рід) відповідно до контексту (одна жінка). Значення і стиль збережені. Фраза граматично коректна й акуратна для рівня A2."
+      },
+      "completedAt": "2026-10-13T05:36:47.883Z"
+    },
+    {
+      "id": "translate-uk-de-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1198,
+      "dispatchedAt": "2026-10-13T05:36:47.883Z",
+      "usage": {
+        "inputTokens": 355,
+        "outputTokens": 61
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Übersetzung erhält die Bedeutung (Keine Zusage, den Vertrag zu unterschreiben), ist grammatikalisch korrekt und im neutralen Stil verfasst. Der geschützte Begriff 'ABC-123' bleibt erhalten."
+      },
+      "completedAt": "2026-10-13T05:36:48.863Z"
+    },
+    {
+      "id": "translate-uk-de-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1270,
+      "dispatchedAt": "2026-10-13T05:36:48.866Z",
+      "usage": {
+        "inputTokens": 355,
+        "outputTokens": 70
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Übersetzung erhält die Fakten (keine Zusage, Vertrag, Vertragsnummer), die Struktur und nutzt ein formales Register wie verlangt. 'Ich verspreche nicht, den Vertrag ABC-123 zu unterzeichnen.' ist korrekt und entspricht auch dem Stil B2."
+      },
+      "completedAt": "2026-10-13T05:36:50.376Z"
+    },
+    {
+      "id": "translate-uk-en-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1066,
+      "dispatchedAt": "2026-10-13T05:36:50.377Z",
+      "usage": {
+        "inputTokens": 353,
+        "outputTokens": 45
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation correctly preserves the meaning, maintains the protected term, is grammatically correct, and fulfills the neutral style and A2 proficiency requirement."
+      },
+      "completedAt": "2026-10-13T05:36:51.326Z"
+    },
+    {
+      "id": "translate-uk-en-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1098,
+      "dispatchedAt": "2026-10-13T05:36:51.327Z",
+      "usage": {
+        "inputTokens": 353,
+        "outputTokens": 49
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation correctly renders the meaning, keeps the formal style, and preserves the protected term 'ABC-123'. The negation and degree of commitment are retained."
+      },
+      "completedAt": "2026-10-13T05:36:52.292Z"
+    },
+    {
+      "id": "translate-uk-vi-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1444,
+      "dispatchedAt": "2026-10-13T05:36:52.293Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 92
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Ý nghĩa gốc được giữ nguyên: \"Я не обіцяю\" dịch đúng là \"Tôi không hứa\"; \"підписати договір\" đúng thành \"ký hợp đồng\"; cụm \"ABC-123\" được giữ nguyên theo yêu cầu protectedTerms. Văn phong trung lập, đơn giản, phù hợp trình độ A2."
+      },
+      "completedAt": "2026-10-13T05:36:53.534Z"
+    },
+    {
+      "id": "translate-uk-vi-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1236,
+      "dispatchedAt": "2026-10-13T05:36:53.535Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 66
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Nội dung bản dịch truyền đạt chính xác ý không hứa ký hợp đồng ABC-123, bảo toàn định danh ABC-123. Ngữ pháp và từ vựng phù hợp với phong cách trang trọng và trình độ B2."
+      },
+      "completedAt": "2026-10-13T05:36:54.573Z"
+    },
+    {
+      "id": "paraphrase-uk-neutral:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1168,
+      "dispatchedAt": "2026-10-13T05:36:54.573Z",
+      "usage": {
+        "inputTokens": 356,
+        "outputTokens": 57
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Сенс збережено: заміна \"сказав\" на \"заявив\" не змінює факти; стиль та нейтральність також збігаються."
+      },
+      "completedAt": "2026-10-13T05:36:56.028Z"
+    },
+    {
+      "id": "alternatives-uk-neutral:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1470,
+      "dispatchedAt": "2026-10-13T05:36:56.028Z",
+      "usage": {
+        "inputTokens": 395,
+        "outputTokens": 85
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Усі варіанти зберігають точну кількість пакунків, дату і отримувача; використано правильну лексику й синтаксис для А2. 'Точно', 'саме', 'рівно' однаково чітко передають значення 'рівно'."
+      },
+      "completedAt": "2026-10-13T05:36:57.185Z"
+    },
+    {
+      "id": "explain-uk-neutral:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1736,
+      "dispatchedAt": "2026-10-13T05:36:57.186Z",
+      "usage": {
+        "inputTokens": 460,
+        "outputTokens": 102
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Erklärung gibt korrekt an, warum der ursprüngliche Satz grammatikalisch falsch ist: Das Verb steht im Maskulinum, das Subjekt ist feminin. Die empfohlene Korrektur und die grammatikalische Begründung sind verständlich und zutreffend. Die Formulierungen sind einfach und klar, passend für A2-Niveau."
+      },
+      "completedAt": "2026-10-13T05:36:58.752Z"
+    },
+    {
+      "id": "paraphrase-uk-formal:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1248,
+      "dispatchedAt": "2026-10-13T05:36:58.752Z",
+      "usage": {
+        "inputTokens": 356,
+        "outputTokens": 67
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Збережено основний зміст (інформування про готовність жінки), підбір синоніма тут допустимий для парафразування на рівні B2. Формальний стиль і граматика дотримані."
+      },
+      "completedAt": "2026-10-13T05:36:59.635Z"
+    },
+    {
+      "id": "alternatives-uk-formal:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1754,
+      "dispatchedAt": "2026-10-13T05:36:59.637Z",
+      "usage": {
+        "inputTokens": 401,
+        "outputTokens": 119
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Перший і другий варіанти адекватно передають зміст оригіналу, але третій міняє зміст: «орієнтовно» суперечить чіткій кількості в оригіналі ('рівно 3'), тому по змісту він невірний. Мовно всі варіанти коректні. Інструкцію виконано—стиль формальний, рівень B2 не перевищено."
+      },
+      "completedAt": "2026-10-13T05:37:00.915Z"
+    },
+    {
+      "id": "explain-uk-formal:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1540,
+      "dispatchedAt": "2026-10-13T05:37:00.916Z",
+      "usage": {
+        "inputTokens": 462,
+        "outputTokens": 77
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Erklärung beschreibt korrekt den Grammatikfehler im Ursprungssatz und die darauffolgende Korrektur. Die Begriffe sind korrekt verwendet; das Niveau und der Stil sind formell und verständlich für B2. Alle Dimensionen sind erfüllt, inklusive Hinweis auf grammatisches Geschlecht."
+      },
+      "completedAt": "2026-10-13T05:37:01.989Z"
+    },
+    {
+      "id": "lexical-uk:lexical-supplement",
+      "usageKind": "actual",
+      "costMicrousd": 962,
+      "dispatchedAt": "2026-10-13T05:37:01.990Z",
+      "usage": {
+        "inputTokens": 333,
+        "outputTokens": 37
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The output correctly repeats the word 'лист', providing a lexical supplement for the same term as required."
+      },
+      "completedAt": "2026-10-13T05:37:03.035Z"
+    },
+    {
+      "id": "source-uk:source-translation",
+      "usageKind": "actual",
+      "costMicrousd": 1214,
+      "dispatchedAt": "2026-10-13T05:37:03.035Z",
+      "usage": {
+        "inputTokens": 347,
+        "outputTokens": 65
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "fail",
+        "instruction": "pass",
+        "notes": "'надіране' is a misspelling and incorrect word for 'sent'; should be 'надіслане'. The output does not use correct grammar and word choice for A2 level. Meaning is lost due to this error."
+      },
+      "completedAt": "2026-10-13T05:37:04.124Z"
+    },
+    {
+      "id": "de-grammar:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1556,
+      "dispatchedAt": "2026-10-13T05:37:04.124Z",
+      "usage": {
+        "inputTokens": 354,
+        "outputTokens": 106
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "fail",
+        "notes": "Bedeutung: Die Originalphrase verwendet das höfliche 'Sie', aber nach Kontext ist eine einzelne Frau gemeint ('sie'). Die Korrektur hätte 'Sie' zu 'sie' ändern müssen, um dem gemeinten Subjekt zu entsprechen. Sprache: Grammatikalisch in Ordnung. Instruktion: Die Vorgabe, Fehler zu korrigieren, wurde nicht erfüllt, da die falsche Anredeform beibehalten wurde."
+      },
+      "completedAt": "2026-10-13T05:37:05.975Z"
+    },
+    {
+      "id": "translate-de-uk-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1210,
+      "dispatchedAt": "2026-10-13T05:37:05.976Z",
+      "usage": {
+        "inputTokens": 353,
+        "outputTokens": 63
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation preserves the negation and the reference to the contract ABC-123. The Ukrainian sentence is grammatically correct, neutral in style, and suitable for A2 level. The protected term 'ABC-123' is preserved."
+      },
+      "completedAt": "2026-10-13T05:37:13.203Z"
+    },
+    {
+      "id": "translate-de-uk-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1142,
+      "dispatchedAt": "2026-10-13T05:37:13.204Z",
+      "usage": {
+        "inputTokens": 355,
+        "outputTokens": 54
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Факти, імена і ступінь заперечення збережені; граматика в порядку; інструкції формального перекладу дотримано."
+      },
+      "completedAt": "2026-10-13T05:37:14.127Z"
+    },
+    {
+      "id": "translate-de-en-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1102,
+      "dispatchedAt": "2026-10-13T05:37:14.127Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 50
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation accurately conveys the original meaning, maintains the protected term 'ABC-123', is grammatically correct, and matches the neutral tone and A2 proficiency level."
+      },
+      "completedAt": "2026-10-13T05:37:15.049Z"
+    },
+    {
+      "id": "translate-de-en-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1094,
+      "dispatchedAt": "2026-10-13T05:37:15.050Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 49
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation accurately conveys the original meaning, preserves the protected term \"ABC-123\" without alteration, and uses correct and formal English suitable for B2 proficiency."
+      },
+      "completedAt": "2026-10-13T05:37:16.262Z"
+    },
+    {
+      "id": "translate-de-vi-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1392,
+      "dispatchedAt": "2026-10-13T05:37:16.262Z",
+      "usage": {
+        "inputTokens": 352,
+        "outputTokens": 86
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Bedeutung der deutschen Vorlage („Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.“) wurde korrekt ins Vietnamesische übertragen und der Grad der Bindung („nicht hứa“) stimmt überein. 'ABC-123' wurde unverändert übernommen. Stil und Sprachniveau sind einfach gehalten und passen zu A2."
+      },
+      "completedAt": "2026-10-13T05:37:17.654Z"
+    },
+    {
+      "id": "translate-de-vi-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1112,
+      "dispatchedAt": "2026-10-13T05:37:17.655Z",
+      "usage": {
+        "inputTokens": 352,
+        "outputTokens": 51
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Übersetzung überträgt den Sinn korrekt, verwendet den formalen Stil und erhält die geschützte Zeichenkette 'ABC-123' exakt, wie verlangt."
+      },
+      "completedAt": "2026-10-13T05:37:18.733Z"
+    },
+    {
+      "id": "paraphrase-de-neutral:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1082,
+      "dispatchedAt": "2026-10-13T05:37:18.734Z",
+      "usage": {
+        "inputTokens": 357,
+        "outputTokens": 46
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Bedeutung wurde vollständig erhalten, der Satz ist grammatisch korrekt und stilistisch neutral. Die Umschreibung ist auf A2-Niveau möglich."
+      },
+      "completedAt": "2026-10-13T05:37:19.720Z"
+    },
+    {
+      "id": "alternatives-de-neutral:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1248,
+      "dispatchedAt": "2026-10-13T05:37:19.721Z",
+      "usage": {
+        "inputTokens": 388,
+        "outputTokens": 59
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Alle drei Alternativen erhalten die Bedeutung, die Zahlen und den Namen korrekt bei. Sie verwenden natürliches Deutsch im A2-Niveau und folgen dem neutralen Stil. Die Anweisung wird korrekt befolgt."
+      },
+      "completedAt": "2026-10-13T05:37:20.788Z"
+    },
+    {
+      "id": "explain-de-neutral:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1672,
+      "dispatchedAt": "2026-10-13T05:37:20.789Z",
+      "usage": {
+        "inputTokens": 496,
+        "outputTokens": 85
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Erklärung beschreibt korrekt, dass das ursprüngliche Verb 'haben' fälschlicherweise für die Einzahl gebraucht wurde und warum 'hat' korrekt ist. Die Erklärung ist klar formuliert und auf A2-Niveau verständlich; sie behandelt genau die Empfehlung und den spezifischen Kontext (eine einzige Frau, nicht Höflichkeitsform)."
+      },
+      "completedAt": "2026-10-13T05:37:22.073Z"
+    },
+    {
+      "id": "paraphrase-de-formal:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1270,
+      "dispatchedAt": "2026-10-13T05:37:22.074Z",
+      "usage": {
+        "inputTokens": 359,
+        "outputTokens": 69
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Bedeutung bleibt erhalten; 'gab an' ist eine angemessene formelle Umschreibung von 'sagte', und die Aussage über 'sie' (eine Frau) bleibt korrekt. Die formale Sprachebene und die Intention des Originals werden erfüllt."
+      },
+      "completedAt": "2026-10-13T05:37:23.027Z"
+    },
+    {
+      "id": "alternatives-de-formal:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1384,
+      "dispatchedAt": "2026-10-13T05:37:23.028Z",
+      "usage": {
+        "inputTokens": 388,
+        "outputTokens": 76
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Alle Alternativen geben die Bedeutung exakt wieder (3 Pakete, am 12. März, Empfänger Mia). Die Sprache ist grammatikalisch korrekt und für B2-Niveau angemessen. Die geforderte formale Sprache wurde eingehalten. 'Mia' bleibt unverändert."
+      },
+      "completedAt": "2026-10-13T05:37:24.229Z"
+    },
+    {
+      "id": "explain-de-formal:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1384,
+      "dispatchedAt": "2026-10-13T05:37:24.230Z",
+      "usage": {
+        "inputTokens": 472,
+        "outputTokens": 55
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Erklärung gibt korrekt an, warum „hat“ grammatisch angemessener ist und berücksichtigt die Kontextinformation zur Bedeutung von „Sie“. Die Erklärung ist gut verständlich und passend formuliert."
+      },
+      "completedAt": "2026-10-13T05:37:25.467Z"
+    },
+    {
+      "id": "lexical-de:lexical-supplement",
+      "usageKind": "actual",
+      "costMicrousd": 1042,
+      "dispatchedAt": "2026-10-13T05:37:25.468Z",
+      "usage": {
+        "inputTokens": 333,
+        "outputTokens": 47
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Es handelt sich um eine korrekte Wiedergabe ohne Bedeutungsänderung; das Wort ist neutral und auf A2-Niveau verständlich."
+      },
+      "completedAt": "2026-10-13T05:37:26.480Z"
+    },
+    {
+      "id": "source-de:source-translation",
+      "usageKind": "actual",
+      "costMicrousd": 1190,
+      "dispatchedAt": "2026-10-13T05:37:26.481Z",
+      "usage": {
+        "inputTokens": 347,
+        "outputTokens": 62
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Übersetzung gibt die Bedeutung des Originals korrekt wieder. Die Sprache ist einfach und neutral gehalten, was dem Niveau A2 entspricht, und adressiert keine Person direkt, sondern definiert allgemein. Die Instruktion wurde erfüllt."
+      },
+      "completedAt": "2026-10-13T05:37:27.874Z"
+    },
+    {
+      "id": "en-grammar:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1176,
+      "dispatchedAt": "2026-10-13T05:37:27.877Z",
+      "usage": {
+        "inputTokens": 344,
+        "outputTokens": 61
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The corrected sentence, 'She sent the letter yesterday,' accurately and simply fixes the verb tense and agreement errors while maintaining the original meaning. It fulfills the correction task in neutral style and is appropriate for A2 English proficiency."
+      },
+      "completedAt": "2026-10-13T05:37:29.250Z"
+    },
+    {
+      "id": "translate-en-uk-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1156,
+      "dispatchedAt": "2026-10-13T05:37:29.251Z",
+      "usage": {
+        "inputTokens": 350,
+        "outputTokens": 57
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation correctly preserves the negation, the explicit lack of a promise, and the protected term 'ABC-123'. The Ukrainian is grammatically correct and uses simple language suitable for A2 proficiency."
+      },
+      "completedAt": "2026-10-13T05:37:30.251Z"
+    },
+    {
+      "id": "translate-en-uk-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1068,
+      "dispatchedAt": "2026-10-13T05:37:30.252Z",
+      "usage": {
+        "inputTokens": 350,
+        "outputTokens": 46
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation correctly conveys the negation, preserves the contract number 'ABC-123', uses grammatically appropriate Ukrainian, and matches a formal style."
+      },
+      "completedAt": "2026-10-13T05:37:31.054Z"
+    },
+    {
+      "id": "translate-en-de-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1140,
+      "dispatchedAt": "2026-10-13T05:37:31.056Z",
+      "usage": {
+        "inputTokens": 350,
+        "outputTokens": 55
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation correctly preserves the negation and the protected term 'ABC-123'. The German sentence is grammatical, clear, and fits an A2 neutral style. Nothing was invented or omitted."
+      },
+      "completedAt": "2026-10-13T05:37:32.039Z"
+    },
+    {
+      "id": "translate-en-de-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1308,
+      "dispatchedAt": "2026-10-13T05:37:32.040Z",
+      "usage": {
+        "inputTokens": 350,
+        "outputTokens": 76
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translated sentence accurately preserves the negation and details of the source, keeps the protected term 'ABC-123', and uses correct, formal German suitable for B2. 'Ich verspreche nicht, den Vertrag ABC-123 zu unterschreiben.' is a faithful, fluent, and formal translation."
+      },
+      "completedAt": "2026-10-13T05:37:33.043Z"
+    },
+    {
+      "id": "translate-en-vi-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1162,
+      "dispatchedAt": "2026-10-13T05:37:33.044Z",
+      "usage": {
+        "inputTokens": 349,
+        "outputTokens": 58
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation accurately preserves the negation and facts of the original sentence. The language is simple and natural for Vietnamese, appropriate for an A2 level. Protected term 'ABC-123' is preserved correctly."
+      },
+      "completedAt": "2026-10-13T05:37:34.028Z"
+    },
+    {
+      "id": "translate-en-vi-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1210,
+      "dispatchedAt": "2026-10-13T05:37:34.029Z",
+      "usage": {
+        "inputTokens": 349,
+        "outputTokens": 64
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Bản dịch giữ nguyên ý nghĩa gốc, dùng ngữ pháp và từ vựng phù hợp tiếng Việt, và sử dụng phong cách trang trọng. 'Hợp đồng ABC-123' được giữ nguyên theo yêu cầu."
+      },
+      "completedAt": "2026-10-13T05:37:35.166Z"
+    },
+    {
+      "id": "paraphrase-en-neutral:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1284,
+      "dispatchedAt": "2026-10-13T05:37:35.167Z",
+      "usage": {
+        "inputTokens": 346,
+        "outputTokens": 74
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The paraphrase 'He mentioned that she was ready.' preserves the factual content, subject, and meaning of the original sentence. The language is grammatically correct and appropriate for a neutral, A2 level. Instruction is fulfilled: it is a paraphrase at the intended level and style."
+      },
+      "completedAt": "2026-10-13T05:37:36.067Z"
+    },
+    {
+      "id": "paraphrase-en-neutral:native-rendering",
+      "usageKind": "actual",
+      "costMicrousd": 1150,
+      "dispatchedAt": "2026-10-13T05:37:36.068Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 56
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The paraphrase accurately conveys the original meaning ('He mentioned that she was ready'), uses correct Ukrainian grammar and neutral style, matches the context (one woman), and is suitable for A2 proficiency."
+      },
+      "completedAt": "2026-10-13T05:37:37.390Z"
+    },
+    {
+      "id": "alternatives-en-neutral:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1334,
+      "dispatchedAt": "2026-10-13T05:37:37.391Z",
+      "usage": {
+        "inputTokens": 383,
+        "outputTokens": 71
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Alternative 1 omits 'exactly,' which is a key detail as per 'exactly 3 packages.' The other two alternatives preserve the meaning. All outputs use correct, easy English suitable for A2, and the protected term 'Mia' is retained."
+      },
+      "completedAt": "2026-10-13T05:37:38.611Z"
+    },
+    {
+      "id": "explain-en-neutral:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1498,
+      "dispatchedAt": "2026-10-13T05:37:38.612Z",
+      "usage": {
+        "inputTokens": 465,
+        "outputTokens": 71
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Пояснення правильно вказує на граматичну помилку, коректно описує виправлення та мотивує рекомендацію. Формулювання просте й зрозуміле для рівня A2, стиль нейтральний."
+      },
+      "completedAt": "2026-10-13T05:37:39.636Z"
+    },
+    {
+      "id": "paraphrase-en-formal:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1180,
+      "dispatchedAt": "2026-10-13T05:37:39.637Z",
+      "usage": {
+        "inputTokens": 346,
+        "outputTokens": 61
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The paraphrase preserves the meaning and facts of the original, uses formal wording, and rewords 'said' to 'stated' and 'ready' to 'prepared', which matches the requested paraphrase and style."
+      },
+      "completedAt": "2026-10-13T05:37:40.909Z"
+    },
+    {
+      "id": "alternatives-en-formal:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1596,
+      "dispatchedAt": "2026-10-13T05:37:40.910Z",
+      "usage": {
+        "inputTokens": 382,
+        "outputTokens": 104
+      },
+      "judgment": {
+        "meaning": "fail",
+        "language": "pass",
+        "instruction": "fail",
+        "notes": "Alternative 1 omits 'exactly', which is a loss of precision, so meaning fails; instruction fails because not all alternatives match the precision of the original ('exactly 3'). Alternatives 2 and 3 retain the intended meaning but only Alternative 3 uses a passive structure, slightly shifting emphasis, though intent is preserved. However, since at least one alternative omits a key qualifier, both meaning and instruction fail overall."
+      },
+      "completedAt": "2026-10-13T05:37:42.810Z"
+    },
+    {
+      "id": "explain-en-formal:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1716,
+      "dispatchedAt": "2026-10-13T05:37:42.810Z",
+      "usage": {
+        "inputTokens": 514,
+        "outputTokens": 86
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Пояснення точно описує граматичну помилку у реченні, правильно розмежовує використання Present Perfect vs Past Simple, і враховує підказку щодо контексту та рекомендації. Мова формальна і граматично коректна; інструкція етапу explanation виконана."
+      },
+      "completedAt": "2026-10-13T05:37:44.085Z"
+    },
+    {
+      "id": "lexical-en:lexical-supplement",
+      "usageKind": "actual",
+      "costMicrousd": 1090,
+      "dispatchedAt": "2026-10-13T05:37:44.086Z",
+      "usage": {
+        "inputTokens": 333,
+        "outputTokens": 53
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "'Letter' is correctly identified as a lexical supplement in English, fits A2 level, and the style is neutral. No additional information is provided but the answer suits the instruction."
+      },
+      "completedAt": "2026-10-13T05:37:45.259Z"
+    },
+    {
+      "id": "source-en:source-translation",
+      "usageKind": "actual",
+      "costMicrousd": 1018,
+      "dispatchedAt": "2026-10-13T05:37:45.260Z",
+      "usage": {
+        "inputTokens": 341,
+        "outputTokens": 42
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation correctly and simply renders the German sentence into English, maintaining the meaning and level. No details are added or omitted."
+      },
+      "completedAt": "2026-10-13T05:37:46.142Z"
+    },
+    {
+      "id": "vi-grammar:correction",
+      "usageKind": "actual",
+      "costMicrousd": 1226,
+      "dispatchedAt": "2026-10-13T05:37:46.143Z",
+      "usage": {
+        "inputTokens": 357,
+        "outputTokens": 64
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Đầu ra sửa lại đúng trật tự từ và thì quá khứ, giữ đầy đủ ý nghĩa gốc; không thay đổi nghĩa hoặc chi tiết. Ngữ pháp phù hợp trình độ A2, phong cách trung lập."
+      },
+      "completedAt": "2026-10-13T05:37:47.244Z"
+    },
+    {
+      "id": "translate-vi-uk-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1302,
+      "dispatchedAt": "2026-10-13T05:37:47.245Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 75
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Значення передано точно: 'Я не обіцяю підписати контракт ABC-123.' відповідає в'єтнамському оригіналу. Граматика і стиль нейтральні, і захищений термін використано вірно."
+      },
+      "completedAt": "2026-10-13T05:37:48.543Z"
+    },
+    {
+      "id": "translate-vi-uk-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1070,
+      "dispatchedAt": "2026-10-13T05:37:48.544Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 46
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Збережена структура речення, значення і захищений термін ABC-123, стиль формальний, переклад коректний."
+      },
+      "completedAt": "2026-10-13T05:37:49.586Z"
+    },
+    {
+      "id": "translate-vi-de-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1150,
+      "dispatchedAt": "2026-10-13T05:37:49.587Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 56
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Übersetzung behält die Bedeutung und Fakten unverändert bei. Der Satz ist grammatisch korrekt und entspricht dem neutralen Stil. Der geschützte Begriff \"ABC-123\" bleibt erhalten."
+      },
+      "completedAt": "2026-10-13T05:37:50.482Z"
+    },
+    {
+      "id": "translate-vi-de-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1190,
+      "dispatchedAt": "2026-10-13T05:37:50.483Z",
+      "usage": {
+        "inputTokens": 351,
+        "outputTokens": 61
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Die Übersetzung gibt die Verneinung, die Tatsache des Nicht-Versprechens und die Bezeichnung 'ABC-123' korrekt wieder. Der formelle Stil und das B2-Niveau sind eingehalten."
+      },
+      "completedAt": "2026-10-13T05:37:51.478Z"
+    },
+    {
+      "id": "translate-vi-en-neutral:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1240,
+      "dispatchedAt": "2026-10-13T05:37:51.479Z",
+      "usage": {
+        "inputTokens": 348,
+        "outputTokens": 68
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The meaning of the input is preserved, with 'I do not promise to sign contract ABC-123.' accurately reflecting the original statement. The language is clear and appropriate for A2 level, and the translation fulfills all requirements, including preserving the protected term."
+      },
+      "completedAt": "2026-10-13T05:37:52.606Z"
+    },
+    {
+      "id": "translate-vi-en-formal:translation",
+      "usageKind": "actual",
+      "costMicrousd": 1002,
+      "dispatchedAt": "2026-10-13T05:37:52.607Z",
+      "usage": {
+        "inputTokens": 349,
+        "outputTokens": 38
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation is accurate, preserves the negation and the protected term, and is in correct formal English."
+      },
+      "completedAt": "2026-10-13T05:37:53.515Z"
+    },
+    {
+      "id": "paraphrase-vi-neutral:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1190,
+      "dispatchedAt": "2026-10-13T05:37:53.516Z",
+      "usage": {
+        "inputTokens": 359,
+        "outputTokens": 59
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "'Anh ấy bảo cô ấy đã chuẩn bị xong.' là một cách diễn đạt lại nghĩa của câu gốc, đồng nghĩa trong ngữ cảnh và trung lập, phù hợp cho trình độ A2."
+      },
+      "completedAt": "2026-10-13T05:37:54.808Z"
+    },
+    {
+      "id": "alternatives-vi-neutral:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1466,
+      "dispatchedAt": "2026-10-13T05:37:54.811Z",
+      "usage": {
+        "inputTokens": 409,
+        "outputTokens": 81
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Tất cả các phương án đều giữ nguyên ý nghĩa (giao đúng/chính xác 3 gói hàng cho Mia vào ngày 12 tháng 3), diễn đạt tự nhiên và tuân thủ yêu cầu trình độ A2. Nghĩa không bị thay đổi; \"Mia\" được giữ nguyên."
+      },
+      "completedAt": "2026-10-13T05:37:55.902Z"
+    },
+    {
+      "id": "explain-vi-neutral:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1500,
+      "dispatchedAt": "2026-10-13T05:37:55.903Z",
+      "usage": {
+        "inputTokens": 482,
+        "outputTokens": 67
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Пояснення точно роз'яснює граматичну помилку у вихідному реченні, правильно пояснює причину її виправлення і відповідає нейтральному стилю та рівню А2."
+      },
+      "completedAt": "2026-10-13T05:37:57.391Z"
+    },
+    {
+      "id": "paraphrase-vi-formal:paraphrase",
+      "usageKind": "actual",
+      "costMicrousd": 1300,
+      "dispatchedAt": "2026-10-13T05:37:57.391Z",
+      "usage": {
+        "inputTokens": 362,
+        "outputTokens": 72
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Nội dung được diễn đạt lại đúng ý nghĩa gốc và chuyển sang phong cách trang trọng hơn phù hợp với B2. Đại từ được thay đổi thành 'ông ấy' và 'bà ấy' mang tính trang trọng, và cấu trúc câu phù hợp."
+      },
+      "completedAt": "2026-10-13T05:37:58.330Z"
+    },
+    {
+      "id": "alternatives-vi-formal:alternatives",
+      "usageKind": "actual",
+      "costMicrousd": 1860,
+      "dispatchedAt": "2026-10-13T05:37:58.332Z",
+      "usage": {
+        "inputTokens": 410,
+        "outputTokens": 130
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Tất cả các phương án đều diễn đạt đúng nội dung gốc: giao đúng/số lượng xác định (3) gói hàng cho Mia vào ngày 12/3; các từ ngữ như 'chính xác', 'đủ', và 'đảm bảo' vẫn giữ nguyên ý nghĩa cơ bản. Ngôn ngữ sử dụng phù hợp phong cách trang trọng và trình độ B2. Chỉ duy nhất biến thể 3 ('Tôi đảm bảo...') bổ sung yếu tố cam kết, nhưng vẫn không thay đổi nghĩa chính."
+      },
+      "completedAt": "2026-10-13T05:37:59.959Z"
+    },
+    {
+      "id": "explain-vi-formal:explanation",
+      "usageKind": "actual",
+      "costMicrousd": 1792,
+      "dispatchedAt": "2026-10-13T05:37:59.961Z",
+      "usage": {
+        "inputTokens": 512,
+        "outputTokens": 96
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "Пояснення коректно аналізує хибний порядок слів у вихідному реченні та обґрунтовує правильну версію, зберігаючи всі факти й назви та не додаючи вигаданого контексту. Мова чітка, граматично правильна, стиль формальний, як вимагається."
+      },
+      "completedAt": "2026-10-13T05:38:01.394Z"
+    },
+    {
+      "id": "lexical-vi:lexical-supplement",
+      "usageKind": "actual",
+      "costMicrousd": 998,
+      "dispatchedAt": "2026-10-13T05:38:01.395Z",
+      "usage": {
+        "inputTokens": 335,
+        "outputTokens": 41
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "'thư' is correctly and neutrally presented as the lexical supplement for the requested Vietnamese word at A2 level."
+      },
+      "completedAt": "2026-10-13T05:38:02.449Z"
+    },
+    {
+      "id": "source-vi:source-translation",
+      "usageKind": "actual",
+      "costMicrousd": 1056,
+      "dispatchedAt": "2026-10-13T05:38:02.450Z",
+      "usage": {
+        "inputTokens": 344,
+        "outputTokens": 46
+      },
+      "judgment": {
+        "meaning": "pass",
+        "language": "pass",
+        "instruction": "pass",
+        "notes": "The translation accurately conveys the meaning of the original, uses natural and grammatically correct Vietnamese, and matches the neutral style suitable for A2 proficiency."
+      },
+      "completedAt": "2026-10-13T05:38:03.426Z"
+    }
+  ],
+  "completedAt": "2026-10-13T05:38:03.427Z",
+  "digest": "b036c66f7c2bed38e5f67fdc88a6d7b76c6448c09756f0774c5eaf7e3b5eb365"
+}

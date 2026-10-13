@@ -1,0 +1,344 @@
+{
+  "version": "release-acceptance-v1",
+  "startedAt": "2026-10-13T07:27:27.308Z",
+  "provider": "synthetic-fixtures-only",
+  "paidCalls": 0,
+  "state": "passed",
+  "checks": [
+    {
+      "name": "CI: lint, unit, typecheck, production builds",
+      "command": [
+        "npm",
+        "run",
+        "ci"
+      ],
+      "startedAt": "2026-10-13T07:27:27.309Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:52.648Z",
+      "exitCode": 0
+    },
+    {
+      "name": "Database migrations",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tools/migrate.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:52.648Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:52.705Z",
+      "exitCode": 0
+    },
+    {
+      "name": "identity integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/identity.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:52.705Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:52.767Z",
+      "exitCode": 0
+    },
+    {
+      "name": "oidc integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/oidc.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:52.768Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:52.936Z",
+      "exitCode": 0
+    },
+    {
+      "name": "sessions integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/sessions.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:52.937Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:53.756Z",
+      "exitCode": 0
+    },
+    {
+      "name": "handoff integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/handoff.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:53.757Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:53.786Z",
+      "exitCode": 0
+    },
+    {
+      "name": "operations-schema integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/operations-schema.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:53.786Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:53.857Z",
+      "exitCode": 0
+    },
+    {
+      "name": "operations integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/operations.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:53.858Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:57.332Z",
+      "exitCode": 0
+    },
+    {
+      "name": "payloads integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/payloads.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:57.333Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:27:58.733Z",
+      "exitCode": 0
+    },
+    {
+      "name": "budgets integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/budgets.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:27:58.733Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:00.782Z",
+      "exitCode": 0
+    },
+    {
+      "name": "recovery integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/recovery.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:00.782Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:01.713Z",
+      "exitCode": 0
+    },
+    {
+      "name": "translation integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/translation.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:01.713Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:06.134Z",
+      "exitCode": 0
+    },
+    {
+      "name": "reference integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/reference.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:06.134Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:21.941Z",
+      "exitCode": 0
+    },
+    {
+      "name": "privacy integration",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--env-file-if-exists=.env",
+        "tests/privacy.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:21.942Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:25.000Z",
+      "exitCode": 0
+    },
+    {
+      "name": "Proxy privacy canaries",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "--test",
+        "tests/proxy-privacy.integration.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:25.000Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:25.113Z",
+      "exitCode": 0
+    },
+    {
+      "name": "preferences browser",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tests/preferences.browser.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:25.113Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:28.244Z",
+      "exitCode": 0
+    },
+    {
+      "name": "editor browser",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tests/editor.browser.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:28.245Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:33.735Z",
+      "exitCode": 0
+    },
+    {
+      "name": "reference browser",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tests/reference.browser.mjs"
+      ],
+      "startedAt": "2026-10-13T07:28:33.735Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:28:35.897Z",
+      "exitCode": 0
+    },
+    {
+      "name": "chrome-lifecycle browser",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tests/chrome-lifecycle.browser.mjs"
+      ],
+      "startedAt": "2026-10-13T07:44:22.801Z",
+      "status": "passed",
+      "previousAttempts": [
+        {
+          "startedAt": "2026-10-13T07:28:35.898Z",
+          "completedAt": "2026-10-13T07:28:39.937Z",
+          "status": "failed",
+          "exitCode": 1
+        }
+      ],
+      "completedAt": "2026-10-13T07:44:27.905Z",
+      "exitCode": 0
+    },
+    {
+      "name": "Native Chrome/Edge/Firefox correction and translation matrix",
+      "command": [
+        "xvfb-run",
+        "-a",
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tools/run-browser-matrix.mjs"
+      ],
+      "startedAt": "2026-10-13T07:44:27.905Z",
+      "status": "passed",
+      "matrixBrowsers": "firefox",
+      "previousAttempts": [
+        {
+          "startedAt": "2026-10-13T07:28:39.937Z",
+          "completedAt": "2026-10-13T07:38:16.146Z",
+          "status": "failed",
+          "exitCode": 1
+        }
+      ],
+      "completedAt": "2026-10-13T07:44:54.062Z",
+      "exitCode": 0
+    },
+    {
+      "name": "chrome production packaging",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tools/package-extension.mjs",
+        "--browser=chrome"
+      ],
+      "startedAt": "2026-10-13T07:38:16.147Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:38:16.184Z",
+      "exitCode": 0
+    },
+    {
+      "name": "edge production packaging",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tools/package-extension.mjs",
+        "--browser=edge"
+      ],
+      "startedAt": "2026-10-13T07:38:16.184Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:38:16.222Z",
+      "exitCode": 0
+    },
+    {
+      "name": "firefox production packaging",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tools/package-extension.mjs",
+        "--browser=firefox"
+      ],
+      "startedAt": "2026-10-13T07:38:16.222Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:38:16.260Z",
+      "exitCode": 0
+    },
+    {
+      "name": "Recursive package audit",
+      "command": [
+        "/home/vitalik/.nvm/versions/node/v22.23.2/bin/node",
+        "tools/audit-extension-packages.mjs"
+      ],
+      "startedAt": "2026-10-13T07:38:16.261Z",
+      "status": "passed",
+      "completedAt": "2026-10-13T07:38:16.311Z",
+      "exitCode": 0
+    }
+  ],
+  "completedAt": "2026-10-13T07:44:54.064Z",
+  "resumedAt": "2026-10-13T07:44:22.800Z",
+  "browserMatrixEvidence": [
+    {
+      "path": "docs/evaluations/browser-matrix/chrome-panel.json",
+      "testedAt": "2026-10-13T07:29:21.733Z",
+      "version": "154.0.8037.57",
+      "cases": 24
+    },
+    {
+      "path": "docs/evaluations/browser-matrix/chrome-web.json",
+      "testedAt": "2026-10-13T07:33:06.333Z",
+      "version": "154.0.8037.57",
+      "cases": 24
+    },
+    {
+      "path": "docs/evaluations/browser-matrix/edge-panel.json",
+      "testedAt": "2026-10-13T07:33:47.011Z",
+      "version": "155.0.4283.45",
+      "cases": 24
+    },
+    {
+      "path": "docs/evaluations/browser-matrix/edge-web.json",
+      "testedAt": "2026-10-13T07:37:43.808Z",
+      "version": "155.0.4283.45",
+      "cases": 24
+    },
+    {
+      "path": "docs/evaluations/browser-matrix/firefox-panel.json",
+      "testedAt": "2026-10-13T07:44:53.580Z",
+      "version": "157.0.1",
+      "cases": 24
+    }
+  ]
+}

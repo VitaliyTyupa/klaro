@@ -1,0 +1,386 @@
+{
+  "testedAt": "2026-10-13T07:38:16.307Z",
+  "status": "passed",
+  "scope": "static production packages; runtime network evidence recorded separately",
+  "packages": [
+    {
+      "browser": "chrome",
+      "origin": "https://klaro.example",
+      "placeholderOrigin": true,
+      "permissions": [
+        "sidePanel",
+        "identity"
+      ],
+      "manifest": {
+        "manifest_version": 3,
+        "name": "Klaro",
+        "version": "0.1.0",
+        "minimum_chrome_version": "116",
+        "description": "Корекція та переклад тексту, який ви вводите або вставляєте вручну.",
+        "permissions": [
+          "sidePanel",
+          "identity"
+        ],
+        "host_permissions": [
+          "https://klaro.example/*"
+        ],
+        "action": {
+          "default_title": "Відкрити Klaro"
+        },
+        "side_panel": {
+          "default_path": "index.html"
+        },
+        "background": {
+          "service_worker": "service-worker.js"
+        },
+        "commands": {
+          "open-klaro": {
+            "suggested_key": {
+              "default": "Ctrl+Shift+K",
+              "mac": "Command+Shift+K"
+            },
+            "description": "Відкрити панель Klaro"
+          }
+        },
+        "content_security_policy": {
+          "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://klaro.example wss://klaro.example;"
+        }
+      },
+      "codeFiles": 11,
+      "files": [
+        {
+          "path": "3rdpartylicenses.txt",
+          "sha256": "09286594f65c8780db55b46e30b6a4980b13831d76d33ff468cd16eedb99c373",
+          "bytes": 26715
+        },
+        {
+          "path": "backend-config.js",
+          "sha256": "76d398a756b3b4f5ceb5cf3d5ab1b074f664bf6ae62b1aa94fdef52360f9845f",
+          "bytes": 136
+        },
+        {
+          "path": "chunk-COK2MTJW.js",
+          "sha256": "fa78a484c15513a82fae9c9e53ec407de505399a70666447b5b9c2c3090aa7fd",
+          "bytes": 21847
+        },
+        {
+          "path": "chunk-FAD6XYBR.js",
+          "sha256": "4a874d3efa6e1b5a3056fde87088fdbdd3988a9696b9eb13d04b42bb3f3b4479",
+          "bytes": 4500
+        },
+        {
+          "path": "chunk-O5LVXXV6.js",
+          "sha256": "6c1b9dab5257bf9f88a2f6985816e6abf0655201a604e0877a99ea45d130752f",
+          "bytes": 461400
+        },
+        {
+          "path": "chunk-PCADGY2F.js",
+          "sha256": "1f893b2cd797846c340cf230416ef22ca6b3ebaf8a280680aa1b8c45029822a1",
+          "bytes": 26210
+        },
+        {
+          "path": "chunk-Q7L6LLAK.js",
+          "sha256": "dc407ee5433c003730dec5c452f488bab1b4ba0ef749629eb0ba2c958635d4fc",
+          "bytes": 687
+        },
+        {
+          "path": "chunk-TGDMKHM6.js",
+          "sha256": "3cc4fbb6967f0aacd86410c04561ee335263bfdf16e4772f3248de872d0ef941",
+          "bytes": 851
+        },
+        {
+          "path": "chunk-U2DQCVYZ.js",
+          "sha256": "6c1d99ed8bbdded12b723243f1404a7131e2f789eb7778d2653d66750b9a1320",
+          "bytes": 42850
+        },
+        {
+          "path": "chunk-WUYXQYXQ.js",
+          "sha256": "ace6854e557a8539d4a3a5e843a58f936894e6f8bb1250f4d5fc41d81a66d438",
+          "bytes": 425815
+        },
+        {
+          "path": "index.html",
+          "sha256": "7d0657b173b24e448b0d1d34555ee6a614a238c561459864743a82cb358a741a",
+          "bytes": 8612
+        },
+        {
+          "path": "main-2T32OG74.js",
+          "sha256": "d13a9d004e2a55ab6cff23c1d69d7aef84288991b95013c5cdf9e3cd55822dd7",
+          "bytes": 61003
+        },
+        {
+          "path": "manifest.json",
+          "sha256": "5ec16dd674956e42dc6757108179ea13c8c2d44798119a3c9719600740190780",
+          "bytes": 1004
+        },
+        {
+          "path": "service-worker.js",
+          "sha256": "3ac6267981ec8e26dfea5f667cc9f42210038449f03c3a7a90a6a06703668f91",
+          "bytes": 386
+        },
+        {
+          "path": "styles-MWKWZH6X.css",
+          "sha256": "2859a1022190502332a45e66b72becbf1b5df5600d6d86f945d57a8f6742fa14",
+          "bytes": 8063
+        }
+      ]
+    },
+    {
+      "browser": "edge",
+      "origin": "https://klaro.example",
+      "placeholderOrigin": true,
+      "permissions": [
+        "sidePanel",
+        "identity"
+      ],
+      "manifest": {
+        "manifest_version": 3,
+        "name": "Klaro",
+        "version": "0.1.0",
+        "minimum_chrome_version": "116",
+        "description": "Корекція та переклад тексту, який ви вводите або вставляєте вручну.",
+        "permissions": [
+          "sidePanel",
+          "identity"
+        ],
+        "host_permissions": [
+          "https://klaro.example/*"
+        ],
+        "action": {
+          "default_title": "Відкрити Klaro"
+        },
+        "side_panel": {
+          "default_path": "index.html"
+        },
+        "background": {
+          "service_worker": "service-worker.js"
+        },
+        "commands": {
+          "open-klaro": {
+            "suggested_key": {
+              "default": "Alt+Shift+K",
+              "mac": "Alt+Shift+K"
+            },
+            "description": "Відкрити панель Klaro"
+          }
+        },
+        "content_security_policy": {
+          "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://klaro.example wss://klaro.example;"
+        }
+      },
+      "codeFiles": 11,
+      "files": [
+        {
+          "path": "3rdpartylicenses.txt",
+          "sha256": "09286594f65c8780db55b46e30b6a4980b13831d76d33ff468cd16eedb99c373",
+          "bytes": 26715
+        },
+        {
+          "path": "backend-config.js",
+          "sha256": "5ded4206c40f685b04f0ef428424582a5b83a79a23af7b0e424ec24652603940",
+          "bytes": 134
+        },
+        {
+          "path": "chunk-COK2MTJW.js",
+          "sha256": "fa78a484c15513a82fae9c9e53ec407de505399a70666447b5b9c2c3090aa7fd",
+          "bytes": 21847
+        },
+        {
+          "path": "chunk-FAD6XYBR.js",
+          "sha256": "4a874d3efa6e1b5a3056fde87088fdbdd3988a9696b9eb13d04b42bb3f3b4479",
+          "bytes": 4500
+        },
+        {
+          "path": "chunk-O5LVXXV6.js",
+          "sha256": "6c1b9dab5257bf9f88a2f6985816e6abf0655201a604e0877a99ea45d130752f",
+          "bytes": 461400
+        },
+        {
+          "path": "chunk-PCADGY2F.js",
+          "sha256": "1f893b2cd797846c340cf230416ef22ca6b3ebaf8a280680aa1b8c45029822a1",
+          "bytes": 26210
+        },
+        {
+          "path": "chunk-Q7L6LLAK.js",
+          "sha256": "dc407ee5433c003730dec5c452f488bab1b4ba0ef749629eb0ba2c958635d4fc",
+          "bytes": 687
+        },
+        {
+          "path": "chunk-TGDMKHM6.js",
+          "sha256": "3cc4fbb6967f0aacd86410c04561ee335263bfdf16e4772f3248de872d0ef941",
+          "bytes": 851
+        },
+        {
+          "path": "chunk-U2DQCVYZ.js",
+          "sha256": "6c1d99ed8bbdded12b723243f1404a7131e2f789eb7778d2653d66750b9a1320",
+          "bytes": 42850
+        },
+        {
+          "path": "chunk-WUYXQYXQ.js",
+          "sha256": "ace6854e557a8539d4a3a5e843a58f936894e6f8bb1250f4d5fc41d81a66d438",
+          "bytes": 425815
+        },
+        {
+          "path": "index.html",
+          "sha256": "7d0657b173b24e448b0d1d34555ee6a614a238c561459864743a82cb358a741a",
+          "bytes": 8612
+        },
+        {
+          "path": "main-2T32OG74.js",
+          "sha256": "d13a9d004e2a55ab6cff23c1d69d7aef84288991b95013c5cdf9e3cd55822dd7",
+          "bytes": 61003
+        },
+        {
+          "path": "manifest.json",
+          "sha256": "2c5d8823d3f4a85033577c8687d8a660ab4c19bf58febb0ec476bc703a96ec2c",
+          "bytes": 999
+        },
+        {
+          "path": "service-worker.js",
+          "sha256": "3ac6267981ec8e26dfea5f667cc9f42210038449f03c3a7a90a6a06703668f91",
+          "bytes": 386
+        },
+        {
+          "path": "styles-MWKWZH6X.css",
+          "sha256": "2859a1022190502332a45e66b72becbf1b5df5600d6d86f945d57a8f6742fa14",
+          "bytes": 8063
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "origin": "https://klaro.example",
+      "placeholderOrigin": true,
+      "permissions": [
+        "identity"
+      ],
+      "manifest": {
+        "manifest_version": 3,
+        "name": "Klaro",
+        "version": "0.1.0",
+        "description": "Корекція та переклад тексту, який ви вводите або вставляєте вручну.",
+        "permissions": [
+          "identity"
+        ],
+        "host_permissions": [
+          "https://klaro.example/*"
+        ],
+        "action": {
+          "default_title": "Відкрити Klaro"
+        },
+        "background": {
+          "scripts": [
+            "firefox-background.js"
+          ]
+        },
+        "commands": {
+          "open-klaro": {
+            "suggested_key": {
+              "default": "Alt+Shift+K",
+              "mac": "Alt+Shift+K"
+            },
+            "description": "Відкрити панель Klaro"
+          }
+        },
+        "content_security_policy": {
+          "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://klaro.example wss://klaro.example;"
+        },
+        "sidebar_action": {
+          "default_title": "Klaro",
+          "default_panel": "index.html"
+        },
+        "browser_specific_settings": {
+          "gecko": {
+            "id": "klaro@klaro.local",
+            "strict_min_version": "140.0",
+            "data_collection_permissions": {
+              "required": [
+                "authenticationInfo",
+                "personalCommunications",
+                "personallyIdentifyingInfo"
+              ]
+            }
+          }
+        }
+      },
+      "codeFiles": 11,
+      "files": [
+        {
+          "path": "3rdpartylicenses.txt",
+          "sha256": "09286594f65c8780db55b46e30b6a4980b13831d76d33ff468cd16eedb99c373",
+          "bytes": 26715
+        },
+        {
+          "path": "backend-config.js",
+          "sha256": "256fc1285ff892ab4c9a8255962f46d52bf952bd602b922330ed7d0240c1dff3",
+          "bytes": 137
+        },
+        {
+          "path": "chunk-COK2MTJW.js",
+          "sha256": "fa78a484c15513a82fae9c9e53ec407de505399a70666447b5b9c2c3090aa7fd",
+          "bytes": 21847
+        },
+        {
+          "path": "chunk-FAD6XYBR.js",
+          "sha256": "4a874d3efa6e1b5a3056fde87088fdbdd3988a9696b9eb13d04b42bb3f3b4479",
+          "bytes": 4500
+        },
+        {
+          "path": "chunk-O5LVXXV6.js",
+          "sha256": "6c1b9dab5257bf9f88a2f6985816e6abf0655201a604e0877a99ea45d130752f",
+          "bytes": 461400
+        },
+        {
+          "path": "chunk-PCADGY2F.js",
+          "sha256": "1f893b2cd797846c340cf230416ef22ca6b3ebaf8a280680aa1b8c45029822a1",
+          "bytes": 26210
+        },
+        {
+          "path": "chunk-Q7L6LLAK.js",
+          "sha256": "dc407ee5433c003730dec5c452f488bab1b4ba0ef749629eb0ba2c958635d4fc",
+          "bytes": 687
+        },
+        {
+          "path": "chunk-TGDMKHM6.js",
+          "sha256": "3cc4fbb6967f0aacd86410c04561ee335263bfdf16e4772f3248de872d0ef941",
+          "bytes": 851
+        },
+        {
+          "path": "chunk-U2DQCVYZ.js",
+          "sha256": "6c1d99ed8bbdded12b723243f1404a7131e2f789eb7778d2653d66750b9a1320",
+          "bytes": 42850
+        },
+        {
+          "path": "chunk-WUYXQYXQ.js",
+          "sha256": "ace6854e557a8539d4a3a5e843a58f936894e6f8bb1250f4d5fc41d81a66d438",
+          "bytes": 425815
+        },
+        {
+          "path": "firefox-background.js",
+          "sha256": "91447a09cb1707068a952a0ca519fab4411849c08a60e322ac4cd9f9a3a610f0",
+          "bytes": 317
+        },
+        {
+          "path": "index.html",
+          "sha256": "7d0657b173b24e448b0d1d34555ee6a614a238c561459864743a82cb358a741a",
+          "bytes": 8612
+        },
+        {
+          "path": "main-2T32OG74.js",
+          "sha256": "d13a9d004e2a55ab6cff23c1d69d7aef84288991b95013c5cdf9e3cd55822dd7",
+          "bytes": 61003
+        },
+        {
+          "path": "manifest.json",
+          "sha256": "472e9861df851060f177d4e5a0c94345289c8793d999a7ffbba60cbdbed22e29",
+          "bytes": 1307
+        },
+        {
+          "path": "styles-MWKWZH6X.css",
+          "sha256": "2859a1022190502332a45e66b72becbf1b5df5600d6d86f945d57a8f6742fa14",
+          "bytes": 8063
+        }
+      ]
+    }
+  ]
+}

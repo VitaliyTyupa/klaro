@@ -1,0 +1,50 @@
+{
+  "active": "openai-gpt41mini-policy-initial-v1",
+  "policies": [
+    {
+      "version": "openai-gpt41mini-policy-initial-v1",
+      "model": {
+        "version": "openai-gpt41mini-model-v1",
+        "provider": "openai",
+        "model": "gpt-4.1-mini-2025-04-14",
+        "inputTokenLimit": 16384,
+        "outputTokenLimit": 4096,
+        "timeoutMs": 90000,
+        "structuredOutputs": true
+      },
+      "price": {
+        "version": "openai-gpt41mini-price-2026-10-09",
+        "inputMicrousdPerMillion": 400000,
+        "outputMicrousdPerMillion": 1600000
+      },
+      "workflowVersion": "language-workflows-v1",
+      "promptVersion": "language-v5",
+      "evaluation": {
+        "kind": "initial-acceptance-v1",
+        "reportId": "language-eval-e98a29bb-3299-4a89-b3d1-67e2c401f27f",
+        "modelPolicyVersion": "openai-gpt41mini-model-v1",
+        "promptVersion": "language-v5",
+        "languages": [
+          "uk",
+          "de",
+          "en",
+          "vi"
+        ],
+        "accepted": true,
+        "acceptedBy": "project-owner",
+        "acceptedOn": "2026-10-13",
+        "rationale": "Користувач визнав поточний результат прийнятним для початку та доручив відобразити прийняття у механізмі активації. Невирішені зауваження відкладено для подальшої розробки. Якщо правок немає, повертається оригінал; альтернативи обмежені трьома й показуються по черзі. Мовне оцінювання автоматичне, feedback добровільний, ручний розбір лише спірних випадків.",
+        "sourcePolicyVersion": "openai-gpt41mini-policy-v1",
+        "contractPassed": false,
+        "languagePassed": false,
+        "calibrationPassed": true,
+        "sourceDigest": "dac7c30132ecf0582f60bf38339f85b29adbde2b9f113536e732aa9a30aba51d",
+        "judgeReportId": "judge-df038129-e57c-419e-8108-d90cbb2fcd3c",
+        "judgeDigest": "b036c66f7c2bed38e5f67fdc88a6d7b76c6448c09756f0774c5eaf7e3b5eb365",
+        "acceptanceDigest": "8025f6c765a26ce736c268028f15a2f0d56606c2fcdc6880857d9a115e4b0563",
+        "followUps": "docs/evaluations/initial-acceptance-and-follow-ups.md",
+        "followUpsDigest": "8d36965f873c64d9739caa3cb37c13b614dbea06433a7115df13db91dc8b47b9"
+      }
+    }
+  ]
+}
